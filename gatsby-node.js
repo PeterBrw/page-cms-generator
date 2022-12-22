@@ -56,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     const blogTemplate = path.resolve(`src/template/blogTemplate.js`);
+    const jsonTemplate = path.resolve(`src/template/jsonPageTemplate.js`);
     const careerTemplate = path.resolve(`src/template/careerTemplate.js`);
     const blogAllPostsTemplate = path.resolve(`src/template/blogAllPostsTemplate.js`);
 
@@ -105,6 +106,42 @@ exports.createPages = async ({ graphql, actions }) => {
             });
         });
     });
+//
+//     await graphql(`
+//         query MyQuery {
+//   allFile(filter: {extension: {eq: "json"}}) {
+//     edges {
+//       node {
+//         absolutePath
+//         base
+//         childrenJson {
+//           sections
+//           seoTitle
+//           title
+//         }
+//       }
+//     }
+//   }
+// }
+//
+//     `).then((result) => {
+//         if (result.errors) throw result.errors;
+//
+//         const posts = result.data.edges;
+//
+//         posts.forEach((edge) => {
+//             const node = edge.node;
+//             createPage({
+//                 // Path for this page — required
+//                 path: '/pagesj/' + node.frontmatter.seoTitle + '/',
+//                 component: jsonTemplate,
+//                 context: {
+//                     alldata: node,
+//                     jobs: posts.map(({ node }) => node.frontmatter.title)
+//                 }
+//             });
+//         });
+//     });
 
 
     await graphql(`
