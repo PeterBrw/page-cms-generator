@@ -5,7 +5,9 @@ import PostContent from '../components/new-blog/PostContent';
 const BlogDetail = ({ pageContext, location }) => {
     const { alldata, suggestions, whitepaperCover } = pageContext;
     const { frontmatter: data, rawMarkdownBody } = alldata;
-    console.log(data);
+
+    console.log(pageContext)
+
     return (
         <div className='bg-blog-post pt-28'>
             <Layout
