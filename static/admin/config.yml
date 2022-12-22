@@ -101,3 +101,20 @@ collections:
         default: 'hybrid'
       }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'src/markdown/pages'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'pages' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'SEO Title', name: 'seoTitle', widget: 'string' }
+      - {
+        label: 'Sections',
+        name: 'sections',
+        widget: 'select',
+        options: [ 'a', 'b', 'c', 'd', 'e', 'f' ],
+        default: 'a',
+        multiple: true
+      }
