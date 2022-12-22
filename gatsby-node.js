@@ -106,6 +106,43 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 
+
+    await graphql(`
+        query loadCareersQuery {
+            allMarkdownRemark(
+                sort: { order: DESC, fields: frontmatter___date }
+                filter: { frontmatter: { templateKey: { eq: "pages" } } }
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            seoTitle
+                            sections
+                        }
+                    }
+                }
+            }
+        }
+    `).then((result) => {
+        if (result.errors) throw result.errors;
+
+        const posts = result.data.allMarkdownRemark.edges;
+
+        posts.forEach((edge) => {
+            const node = edge.node;
+            createPage({
+                // Path for this page — required
+                path: '/pages/' + node.frontmatter.seoTitle + '/',
+                component: blogTemplate,
+                context: {
+                    alldata: node,
+                    jobs: posts.map(({ node }) => node.frontmatter.title)
+                }
+            });
+        });
+    });
+
     const whitepaperCover = await graphql(`
         query WhitepaperCover {
             whitepaperCover: file(relativePath: { eq: "whitepaper-cover-blog.png" }) {
