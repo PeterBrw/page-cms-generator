@@ -92,7 +92,13 @@ module.exports = {
                 name: 'markdown'
             }
         },
-
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/src/data`,
+                name: 'json'
+            }
+        },
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-sharp`,
@@ -137,6 +143,12 @@ module.exports = {
                 ],
                 display: 'swap'
             }
-        }
+        },
+        {
+            resolve: `gatsby-transformer-json`,
+            options: {
+                typeName: `Json` // a fixed string
+            },
+        },
     ]
 };

@@ -8,7 +8,7 @@ const BlogDetail = ({ pageContext }) => {
     (acc, curr) => ((acc[curr] = true), acc),
     {}
   );
-  console.log(pageContext);
+  console.log(res);
 
   return (
     <div className="bg-blog-post pt-28">

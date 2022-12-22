@@ -118,3 +118,22 @@ collections:
         default: 'a',
         multiple: true
       }
+  - name: 'navigations'
+    label: 'Navigations'
+    create: true
+    extension: 'json'
+    format: 'json'
+    folder: 'src/data/navigation'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'navigation' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'SEO Title', name: 'seoTitle', widget: 'string' }
+      - {
+        label: 'Sections',
+        name: 'sections',
+        widget: 'select',
+        options: [ 'a', 'b', 'c', 'd', 'e', 'f' ],
+        default: 'a',
+        multiple: true
+      }

@@ -7019,6 +7019,14 @@ gatsby-telemetry@^3.18.0:
     lodash "^4.17.21"
     node-fetch "^2.6.7"
 
+gatsby-transformer-json@4.8.0-alpha-image-service.24:
+  version "4.8.0-alpha-image-service.24"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-4.8.0-alpha-image-service.24.tgz#e52655f9736e74fad1e8602990616825cd7c6181"
+  integrity sha512-FJ64m1yRXUz1r8axJgx41AIfCCCpTrMZw1gFO1ic3mR7E5R+pm8KOGtQJazmqCCNeYUbPip3XPZZII9zj+EVhA==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    bluebird "^3.7.2"
+
 gatsby-transformer-remark@^5.0.0:
   version "5.18.0"
   resolved "https://registry.npmjs.org/gatsby-transformer-remark/-/gatsby-transformer-remark-5.18.0.tgz"
