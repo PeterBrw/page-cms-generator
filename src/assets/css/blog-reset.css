@@ -1,0 +1,107 @@
+.blog-reset {
+    line-height: 1.5;
+    font-size: 1.1875rem;
+}
+.blog-reset p {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+
+.blog-reset h1,
+.blog-reset h2,
+.blog-reset h3,
+.blog-reset h4,
+.blog-reset h5,
+.blog-reset h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.blog-reset h1,
+.blog-reset h2,
+.blog-reset h3 {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+}
+
+.blog-reset h4,
+.blog-reset h5,
+.blog-reset h6 {
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
+}
+
+.blog-reset h1 {
+    font-size: 2rem;
+}
+
+.blog-reset h2 {
+    font-size: 1.5rem;
+}
+
+.blog-reset h3 {
+    font-size: 1.17rem;
+}
+
+.blog-reset h4 {
+    font-size: 1rem;
+}
+
+.blog-reset h5 {
+    font-size: 0.83rem;
+}
+
+.blog-reset h6 {
+    font-size: 0.67rem;
+}
+
+.blog-reset small {
+    font-size: 0.8rem;
+}
+
+.blog-reset a {
+    color: #0f26aa;
+}
+
+.blog-reset ol,
+.blog-reset ul {
+    list-style: initial;
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+.blog-reset ol {
+    list-style: number;
+}
+
+.blog-reset li {
+    line-height: 1.5;
+    margin-top: 0rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.blog-reset li > ul {
+    margin-top: 0;
+}
+
+.blog-reset code {
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.blog-reset img {
+    width: 90%;
+    margin: 0.5rem auto;
+}
+
+.blog-reset p > code,
+.blog-reset li > code,
+.blog-reset dd > code,
+.blog-reset td > code {
+    background: rgb(245, 242, 240);
+    word-wrap: break-word;
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem 0.2rem;
+}
