@@ -106,43 +106,39 @@ exports.createPages = async ({ graphql, actions }) => {
             });
         });
     });
-//
-//     await graphql(`
-//         query MyQuery {
-//   allFile(filter: {extension: {eq: "json"}}) {
-//     edges {
-//       node {
-//         absolutePath
-//         base
-//         childrenJson {
-//           sections
-//           seoTitle
-//           title
-//         }
-//       }
-//     }
-//   }
-// }
-//
-//     `).then((result) => {
-//         if (result.errors) throw result.errors;
-//
-//         const posts = result.data.edges;
-//
-//         posts.forEach((edge) => {
-//             const node = edge.node;
-//             createPage({
-//                 // Path for this page — required
-//                 path: '/pagesj/' + node.frontmatter.seoTitle + '/',
-//                 component: jsonTemplate,
-//                 context: {
-//                     alldata: node,
-//                     jobs: posts.map(({ node }) => node.frontmatter.title)
-//                 }
-//             });
-//         });
-//     });
+    //
+    await graphql(`
+        query MyQuery {
+            allFile(filter: { extension: { eq: "json" } }) {
+                edges {
+                    node {
+                        childrenJson {
+                            sections
+                            seoTitle
+                            title
+                        }
+                    }
+                }
+            }
+        }
+    `).then((result) => {
+        if (result.errors) throw result.errors;
 
+        const posts = result.data.allFile.edges;
+
+        posts.forEach((edge) => {
+          const node = edge.node;
+          console.log(node.childrenJson[0].seoTitle)
+          createPage({
+            // Path for this page — required
+            path: "/pagesjson/" + node.childrenJson[0].seoTitle + "/",
+            component: jsonTemplate,
+            context: {
+              alldata: node.childrenJson[0]
+            },
+          });
+        });
+    });
 
     await graphql(`
         query loadCareersQuery {

@@ -10,8 +10,8 @@ export default function JsonPage({ data }) {
 
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{seoTitle}</p>
+      <h1>title {title}</h1>
+      <p>seo titlu {seoTitle}</p>
       {sections["a"] && <div>a</div>}
       {sections["b"] && <div>b</div>}
       {sections["c"] && <div>c</div>}
