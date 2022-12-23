@@ -2,6 +2,7 @@ import React from "react";
 
 export default function JsonPage({ data }) {
   const sections = data.sections.reduce(
+      // eslint-disable-next-line
     (acc, curr) => ((acc[curr] = true), acc),
     {}
   );

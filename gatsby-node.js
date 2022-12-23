@@ -57,56 +57,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const blogTemplate = path.resolve(`src/template/blogTemplate.js`);
     const jsonTemplate = path.resolve(`src/template/jsonPageTemplate.js`);
-    const careerTemplate = path.resolve(`src/template/careerTemplate.js`);
     const blogAllPostsTemplate = path.resolve(`src/template/blogAllPostsTemplate.js`);
 
-    await graphql(`
-        query loadCareersQuery {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: frontmatter___date }
-                filter: { frontmatter: { templateKey: { eq: "career-page" }, disabled: { eq: false } } }
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            title
-                            seoTitle
-                            description
-                            seoDescription
-                            date
-                            department
-                            location
-                            workType
-                            permalink
-                            employmentType
-                            experience
-                            skills
-                            disabled
-                        }
-                        rawMarkdownBody
-                    }
-                }
-            }
-        }
-    `).then((result) => {
-        if (result.errors) throw result.errors;
-
-        const posts = result.data.allMarkdownRemark.edges;
-
-        posts.forEach((edge) => {
-            const node = edge.node;
-            createPage({
-                // Path for this page — required
-                path: '/careers/' + node.frontmatter.permalink + '/',
-                component: careerTemplate,
-                context: {
-                    alldata: node,
-                    jobs: posts.map(({ node }) => node.frontmatter.title)
-                }
-            });
-        });
-    });
-    //
+    // JSON Pages
     await graphql(`
         query MyQuery {
             allFile(filter: { extension: { eq: "json" } }) {
@@ -127,25 +80,22 @@ exports.createPages = async ({ graphql, actions }) => {
         const posts = result.data.allFile.edges;
 
         posts.forEach((edge) => {
-          const node = edge.node;
-          console.log(node.childrenJson[0].seoTitle)
-          createPage({
-            // Path for this page — required
-            path: "/pagesjson/" + node.childrenJson[0].seoTitle + "/",
-            component: jsonTemplate,
-            context: {
-              alldata: node.childrenJson[0]
-            },
-          });
+            const node = edge.node;
+            createPage({
+                // Path for this page — required
+                path: '/pagesjson/' + node.childrenJson[0].seoTitle + '/',
+                component: jsonTemplate,
+                context: {
+                    alldata: node.childrenJson[0]
+                }
+            });
         });
     });
 
+    // Markdown Pages
     await graphql(`
-        query loadCareersQuery {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: frontmatter___date }
-                filter: { frontmatter: { templateKey: { eq: "pages" } } }
-            ) {
+        query MarkdownPages {
+            allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "pages" } } }) {
                 edges {
                     node {
                         frontmatter {
@@ -162,15 +112,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
         const posts = result.data.allMarkdownRemark.edges;
 
+        // console.log({ posts });
+
         posts.forEach((edge) => {
             const node = edge.node;
+            console.log({ page: node.frontmatter.seoTitle });
             createPage({
                 // Path for this page — required
-                path: '/pages/' + node.frontmatter.seoTitle + '/',
+                path: '/markdownpage/' + node.frontmatter.seoTitle + '/',
                 component: blogTemplate,
                 context: {
-                    alldata: node,
-                    jobs: posts.map(({ node }) => node.frontmatter.title)
+                    alldata: node
                 }
             });
         });
