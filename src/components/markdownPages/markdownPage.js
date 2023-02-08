@@ -7,7 +7,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log(data);
+    console.log(data.featuredimage.publicURL);
 
     const { title, seoTitle } = data;
 
@@ -21,6 +21,7 @@ const MarkdownPage = ({ data }) => {
             {sections['d'] && <div>d</div>}
             {sections['e'] && <div>e</div>}
             {sections['f'] && <div>f</div>}
+            {data.featuredimage.publicURL && <img src={data.featuredimage.publicURL} />}
         </div>
     );
 };
