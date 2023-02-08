@@ -111,6 +111,8 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'SEO Title', name: 'seoTitle', widget: 'string' }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
+      - { label: 'Hero Background', name: 'herobackground', widget: image }
+      - { label: 'Hero Image', name: 'heroimage', widget: image }
       - {
         label: 'Sections',
         name: 'sections',

@@ -105,6 +105,12 @@ exports.createPages = async ({ graphql, actions }) => {
                             featuredimage {
                                 publicURL
                             }
+                            herobackground {
+                                publicURL
+                            }
+                            heroimage {
+                                publicURL
+                            }
                         }
                     }
                 }
