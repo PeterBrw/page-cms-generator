@@ -23,7 +23,7 @@ const MarkdownPage = ({ data }) => {
             {sections['e'] && <div>e</div>}
             {sections['f'] && <div>f</div>}
             {data.featuredimage.publicURL && <img src={data.featuredimage.publicURL} alt='' />}
-            <Hero heroBackground={data.herobackground.publicURL} heroImage={data.heroimage.publicURL} />
+            <Hero heroBackground={data.herobackground} heroImage={data.heroimage} />
         </div>
     );
 };
