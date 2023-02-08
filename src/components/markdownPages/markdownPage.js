@@ -7,7 +7,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log(data.featuredimage);
+    console.log(data);
 
     const { title, seoTitle } = data;
 
