@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero from './Hero';
 
 const MarkdownPage = ({ data }) => {
     const sections = data.sections.reduce(
@@ -22,6 +23,7 @@ const MarkdownPage = ({ data }) => {
             {sections['e'] && <div>e</div>}
             {sections['f'] && <div>f</div>}
             {data.featuredimage.publicURL && <img src={data.featuredimage.publicURL} />}
+            <Hero heroBackground={data.herobackground.publicURL} heroImage={data.heroimage.publicURL} />
         </div>
     );
 };
