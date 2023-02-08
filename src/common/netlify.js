@@ -10,7 +10,9 @@ const BlogPreview = ({ entry }) => (
             title: entry.getIn(['data', 'title']),
             seoTitle: entry.getIn(['data', 'seoTitle']),
             sections: entry.getIn(['data', 'sections']).toArray(),
-            featuredimage: entry.getIn(['data', 'featuredimage'])
+            featuredimage: entry.getIn(['data', 'featuredimage']),
+            herobackground: entry.getIn(['data', 'herobackground']),
+            heroimage: entry.getIn(['data', 'heroimage'])
         }}
     />
 );

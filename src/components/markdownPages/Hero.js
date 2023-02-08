@@ -2,7 +2,7 @@ import React from 'react';
 import GradientButton from '../buttons/GradientButton';
 import LightDarkButton from '../buttons/LightDarkButton';
 import { Container, Row } from '../atoms/Containers';
-import tw, { css } from 'twin.macro';
+import { css } from 'twin.macro';
 
 const heroBg = (url) => css`
     background-image: linear-gradient(#eeeeee, #e4edfc);
