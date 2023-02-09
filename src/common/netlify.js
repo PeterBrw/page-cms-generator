@@ -2,17 +2,17 @@ import CMS from 'netlify-cms-app';
 import React from 'react';
 import '../styles/global.css';
 import JsonPage from '../components/jsonPages/jsonPage';
-import MarkdownPage from '../components/markdownPages/markdownPage';
+// import MarkdownPage from '../components/markdownPages/markdownPage';
+import Hero from '../components/markdownPages/Hero';
 
 const BlogPreview = ({ entry }) => (
-    <MarkdownPage
+    <Hero
         data={{
-            title: entry.getIn(['data', 'title']),
-            seoTitle: entry.getIn(['data', 'seoTitle']),
-            sections: entry.getIn(['data', 'sections']).toArray(),
-            featuredimage: entry.getIn(['data', 'featuredimage']),
+            // title: entry.getIn(['data', 'title']),
+            // seoTitle: entry.getIn(['data', 'seoTitle']),
+            // sections: entry.getIn(['data', 'sections']).toArray(),
             herobackground: entry.getIn(['data', 'herobackground']),
-            heroimage: entry.getIn(['data', 'heroimage'])
+            heroImage: entry.getIn(['data', 'heroImage'])
         }}
     />
 );

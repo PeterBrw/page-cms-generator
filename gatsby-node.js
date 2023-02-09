@@ -57,7 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const blogTemplate = path.resolve(`src/template/blogTemplate.js`);
     const jsonTemplate = path.resolve(`src/template/jsonPageTemplate.js`);
-    const blogAllPostsTemplate = path.resolve(`src/template/blogAllPostsTemplate.js`);
 
     // JSON Pages
     await graphql(`
