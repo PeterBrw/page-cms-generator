@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/global.css';
 import JsonPage from '../components/jsonPages/jsonPage';
 import Hero from '../components/markdownPages/Hero';
+import CSSInjector from './CSSInjector';
 
 const PagesPreview = ({ entry, getAsset }) => {
     const heroImage = getAsset(entry.getIn(['data', 'heroimage'])).path.replace('static', '');
@@ -10,7 +11,15 @@ const PagesPreview = ({ entry, getAsset }) => {
 
     console.log({ background: heroBackground, image: heroImage });
 
-    return <Hero heroBackground={heroBackground} heroImage={heroImage} heroTitle={entry.getIn(['data', 'herotitle'])} />;
+    return (
+        <CSSInjector>
+            <Hero
+                heroBackground={heroBackground}
+                heroImage={heroImage}
+                heroTitle={entry.getIn(['data', 'herotitle'])}
+            />
+        </CSSInjector>
+    );
 };
 
 CMS.registerPreviewTemplate('pages', PagesPreview);
