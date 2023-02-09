@@ -14,38 +14,16 @@ const heroBg = (url) => css`
     }
 `;
 
-const Hero = ({ heroImage, heroBackground }) => {
-    console.log({ heroImage, heroBackground });
+const Hero = ({ heroImage, heroBackground, heroTitle }) => {
     return (
-        <div
-            className='pt-8'
-            // css={css`
-            //     background-image: linear-gradient(#eeeeee, #e4edfc);
-            //     @media screen and (min-width: 1024px) {
-            //         background-size: cover;
-            //         background-repeat: no-repeat;
-            //         background-position: 50% 35%;
-            //         background-image: url(${heroBackground});
-            //     }
-            // `}
-            style={{
-                backgroundImage: 'linear-gradient(#eeeeee, #e4edfc)',
-                '@media screen and (min-width: 1024px)': {
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: '50% 35%',
-                    backgroundImage: heroBackground
-                }
-            }}
-        >
+        <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>
                 <div className='py-16 md:py-24 lg:pt-24 lg:pb-16'>
                     <Row>
                         <div className='col-span-12 lg:col-span-6 order-last lg:order-first'>
                             <div className='lg:mt-16 pt-4 max-w-xl mx-auto lg:mx-0'>
                                 <h1 className='text-left text-blue text-4xl lg:text-5xl leading-normal lg:leading-normal mb-16 font-montserrat'>
-                                    <strong>NIST Compliance</strong> <br className='block md:hidden lg:block' /> for
-                                    Cloud
+                                    {`${heroTitle}`}
                                 </h1>
                                 <p className='text-left text-base lg:text-lg mb-8 leading-relaxed text-gray'>
                                     Enforce regulatory compliance controls for NIST and beyond.

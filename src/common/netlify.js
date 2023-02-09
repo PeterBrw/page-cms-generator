@@ -2,17 +2,18 @@ import CMS from 'netlify-cms-app';
 import React from 'react';
 import '../styles/global.css';
 import JsonPage from '../components/jsonPages/jsonPage';
-// import MarkdownPage from '../components/markdownPages/markdownPage';
 import Hero from '../components/markdownPages/Hero';
 
-const BlogPreview = ({ entry, getAsset }) => {
+const PagesPreview = ({ entry, getAsset }) => {
     const heroImage = getAsset(entry.getIn(['data', 'heroimage'])).path.replace('static', '');
     const heroBackground = getAsset(entry.getIn(['data', 'herobackground'])).path.replace('static', '');
 
     console.log({ background: heroBackground, image: heroImage });
 
-    return <Hero heroBackground={heroBackground} heroImage={heroImage} />;
+    return <Hero heroBackground={heroBackground} heroImage={heroImage} heroTitle={entry.getIn(['data', 'herotitle'])} />;
 };
+
+CMS.registerPreviewTemplate('pages', PagesPreview);
 
 const NavigationsPreview = ({ entry }) => {
     console.log(entry.getIn(['data', 'title']));
@@ -31,8 +32,6 @@ const NavigationsPreview = ({ entry }) => {
 };
 
 CMS.registerPreviewTemplate('navigations', NavigationsPreview);
-
-CMS.registerPreviewTemplate('pages', BlogPreview);
 
 CMS.registerEditorComponent({
     label: 'Image',
