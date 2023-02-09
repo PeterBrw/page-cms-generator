@@ -5,21 +5,13 @@ import JsonPage from '../components/jsonPages/jsonPage';
 // import MarkdownPage from '../components/markdownPages/markdownPage';
 import Hero from '../components/markdownPages/Hero';
 
-const BlogPreview = ({ entry, getAsset, widgetsFor }) => {
-    console.log(getAsset(entry.getIn(['data', 'herobackground'])).path.replace('static', ''));
-    console.log(getAsset(entry.getIn(['data', 'herobackground'])));
+const BlogPreview = ({ entry, getAsset }) => {
+    const heroImage = getAsset(entry.getIn(['data', 'heroimage'])).path.replace('static', '');
+    const heroBackground = getAsset(entry.getIn(['data', 'herobackground'])).path.replace('static', '');
 
-    return (
-        <Hero
-            data={{
-                // title: entry.getIn(['data', 'title']),
-                // seoTitle: entry.getIn(['data', 'seoTitle']),
-                // sections: entry.getIn(['data', 'sections']).toArray(),
-                herobackground: entry.getIn(['data', 'herobackground']),
-                heroImage: entry.getIn(['data', 'heroImage'])
-            }}
-        />
-    );
+    console.log({ background: heroBackground, image: heroImage });
+
+    return <Hero heroBackground={heroBackground} heroImage={heroImage} />;
 };
 
 const NavigationsPreview = ({ entry }) => {

@@ -15,8 +15,29 @@ const heroBg = (url) => css`
 `;
 
 const Hero = ({ heroImage, heroBackground }) => {
+    console.log({ heroImage, heroBackground });
     return (
-        <div className='pt-8' css={heroBg(heroBackground)}>
+        <div
+            className='pt-8'
+            // css={css`
+            //     background-image: linear-gradient(#eeeeee, #e4edfc);
+            //     @media screen and (min-width: 1024px) {
+            //         background-size: cover;
+            //         background-repeat: no-repeat;
+            //         background-position: 50% 35%;
+            //         background-image: url(${heroBackground});
+            //     }
+            // `}
+            style={{
+                backgroundImage: 'linear-gradient(#eeeeee, #e4edfc)',
+                '@media screen and (min-width: 1024px)': {
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: '50% 35%',
+                    backgroundImage: heroBackground
+                }
+            }}
+        >
             <Container>
                 <div className='py-16 md:py-24 lg:pt-24 lg:pb-16'>
                     <Row>
