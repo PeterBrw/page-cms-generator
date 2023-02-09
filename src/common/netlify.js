@@ -5,22 +5,28 @@ import JsonPage from '../components/jsonPages/jsonPage';
 // import MarkdownPage from '../components/markdownPages/markdownPage';
 import Hero from '../components/markdownPages/Hero';
 
-const BlogPreview = ({ entry }) => (
-    <Hero
-        data={{
-            // title: entry.getIn(['data', 'title']),
-            // seoTitle: entry.getIn(['data', 'seoTitle']),
-            // sections: entry.getIn(['data', 'sections']).toArray(),
-            herobackground: entry.getIn(['data', 'herobackground']),
-            heroImage: entry.getIn(['data', 'heroImage'])
-        }}
-    />
-);
+const BlogPreview = ({ entry, getAsset, widgetsFor }) => {
+    console.log(getAsset(entry.getIn(['data', 'herobackground'])).path.replace('static', ''));
+    console.log(getAsset(entry.getIn(['data', 'herobackground'])));
+
+    return (
+        <Hero
+            data={{
+                // title: entry.getIn(['data', 'title']),
+                // seoTitle: entry.getIn(['data', 'seoTitle']),
+                // sections: entry.getIn(['data', 'sections']).toArray(),
+                herobackground: entry.getIn(['data', 'herobackground']),
+                heroImage: entry.getIn(['data', 'heroImage'])
+            }}
+        />
+    );
+};
 
 const NavigationsPreview = ({ entry }) => {
     console.log(entry.getIn(['data', 'title']));
     console.log(entry.getIn(['data', 'seoTitle']));
     console.log(entry.getIn(['data', 'sections']).toArray());
+    console.log('cucu');
     return (
         <JsonPage
             data={{
@@ -34,7 +40,7 @@ const NavigationsPreview = ({ entry }) => {
 
 CMS.registerPreviewTemplate('navigations', NavigationsPreview);
 
-CMS.registerPreviewTemplate('blog', BlogPreview);
+CMS.registerPreviewTemplate('pages', BlogPreview);
 
 CMS.registerEditorComponent({
     label: 'Image',
