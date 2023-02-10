@@ -108,6 +108,12 @@ exports.createPages = async ({ graphql, actions }) => {
                                 herofirstparagraph
                                 herosecondparagraph
                             }
+                            firstsection {
+                                rightsectionimage
+                                rightsectionsubtitle
+                                rightsectionfirstparagraph
+                                rightsecondparagraph
+                            }
                         }
                     }
                 }

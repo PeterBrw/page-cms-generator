@@ -4,8 +4,10 @@ import '../styles/global.css';
 import JsonPage from '../components/jsonPages/jsonPage';
 import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
+import RightSection from '../components/markdownPages/RightSection';
 
 const PagesPreview = ({ entry }) => {
+    console.log(entry.getIn(['data', 'firstsection']).toJS());
     return (
         <CSSInjector>
             <Hero
@@ -14,6 +16,12 @@ const PagesPreview = ({ entry }) => {
                 heroTitle={entry.getIn(['data', 'hero']).toJS().herotitle}
                 heroFirstParagraph={entry.getIn(['data', 'hero']).toJS().herofirstparagraph}
                 heroSecondParagraph={entry.getIn(['data', 'hero']).toJS().herosecondparagraph}
+            />
+            <RightSection
+                subtitle={entry.getIn(['data', 'firstsection']).toJS().rightsectionsubtitle}
+                firstParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsectionfirstparagraph}
+                secondParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsecondparagraph}
+                image={entry.getIn(['data', 'firstsection']).toJS().rightsectionimage}
             />
         </CSSInjector>
     );
