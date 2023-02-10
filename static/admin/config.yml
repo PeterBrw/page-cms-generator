@@ -135,6 +135,14 @@ collections:
           - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string' }
           - { label: 'Right Section First Paragraph', name: 'rightsectionfirstparagraph', widget: 'string' }
           - { label: 'Right Section Second Paragraph', name: 'rightsecondparagraph', widget: 'string' }
+      - label: "First Section"
+        name: "leftsection"
+        widget: "object"
+        fields:
+          - { label: 'Left Section Image', name: 'leftsectionimage', widget: image }
+          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'string' }
+          - { label: 'Left Section First Paragraph', name: 'leftsectionfirstparagraph', widget: 'string' }
+          - { label: 'Left Section Second Paragraph', name: 'leftsecondparagraph', widget: 'string' }
   - name: 'navigations'
     label: 'Navigations'
     create: true
