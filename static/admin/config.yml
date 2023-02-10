@@ -110,7 +110,6 @@ collections:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'pages' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'SEO Title', name: 'seoTitle', widget: 'string' }
-      - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - {
         label: 'Sections',
         name: 'sections',
