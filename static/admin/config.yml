@@ -127,6 +127,14 @@ collections:
           - { label: 'Hero Title', name: 'herotitle', widget: 'string' }
           - { label: 'Hero First Paragraph', name: 'herofirstparagraph', widget: 'string' }
           - { label: 'Hero Second Paragraph', name: 'herosecondparagraph', widget: 'string' }
+      - label: "First Section"
+        name: "firstsection"
+        widget: "object"
+        fields:
+          - { label: 'Right Section Image', name: 'rightsectionimage', widget: image }
+          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string' }
+          - { label: 'Right Section First Paragraph', name: 'rightsectionfirstparagraph', widget: 'string' }
+          - { label: 'Right Section Second Paragraph', name: 'rightsecondparagraph', widget: 'string' }
   - name: 'navigations'
     label: 'Navigations'
     create: true
