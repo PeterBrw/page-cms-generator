@@ -104,11 +104,13 @@ exports.createPages = async ({ graphql, actions }) => {
                             featuredimage {
                                 publicURL
                             }
-                            herobackground
-                            heroimage
-                            herotitle
-                            herofirstparagraph
-                            herosecondparagraph
+                            hero {
+                                herobackground
+                                heroimage
+                                herotitle
+                                herofirstparagraph
+                                herosecondparagraph
+                            }
                         }
                     }
                 }

@@ -111,11 +111,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'SEO Title', name: 'seoTitle', widget: 'string' }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
-      - { label: 'Hero Background', name: 'herobackground', widget: image }
-      - { label: 'Hero Image', name: 'heroimage', widget: image }
-      - { label: 'Hero Title', name: 'herotitle', widget: 'string'}
-      - { label: 'Hero First Paragraph', name: 'herofirstparagraph', widget: 'string'}
-      - { label: 'Hero Second Paragraph', name: 'herosecondparagraph', widget: 'string'}
       - {
         label: 'Sections',
         name: 'sections',
@@ -128,8 +123,11 @@ collections:
         name: "hero"
         widget: "object"
         fields:
-          - { label: "Public", name: "public", widget: "boolean", default: true }
-          - { label: "Name", name: "name", widget: "string" }
+          - { label: 'Hero Background', name: 'herobackground', widget: image }
+          - { label: 'Hero Image', name: 'heroimage', widget: image }
+          - { label: 'Hero Title', name: 'herotitle', widget: 'string' }
+          - { label: 'Hero First Paragraph', name: 'herofirstparagraph', widget: 'string' }
+          - { label: 'Hero Second Paragraph', name: 'herosecondparagraph', widget: 'string' }
   - name: 'navigations'
     label: 'Navigations'
     create: true
