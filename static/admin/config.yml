@@ -124,6 +124,12 @@ collections:
         default: 'a',
         multiple: true
       }
+      - label: "Hero"
+        name: "hero"
+        widget: "object"
+        fields:
+          - { label: "Public", name: "public", widget: "boolean", default: true }
+          - { label: "Name", name: "name", widget: "string" }
   - name: 'navigations'
     label: 'Navigations'
     create: true
