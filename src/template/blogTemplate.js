@@ -6,10 +6,6 @@ const BlogDetail = ({ pageContext }) => {
 
     console.log(alldata);
 
-    return (
-        <div className='bg-blog-post pt-28'>
-            <MarkdownPage data={alldata.frontmatter} />
-        </div>
-    );
+    return <MarkdownPage data={alldata.frontmatter} />;
 };
 export default BlogDetail;
