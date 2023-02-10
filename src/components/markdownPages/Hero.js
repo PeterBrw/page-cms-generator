@@ -15,7 +15,6 @@ const heroBg = (url) => css`
 `;
 
 const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSecondParagraph }) => {
-    console.log({ heroFirstParagraph, heroSecondParagraph });
     return (
         <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>

@@ -8,7 +8,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log(data.featuredimage.publicURL);
+    console.log(data);
 
     const { title, seoTitle } = data;
 
@@ -23,7 +23,13 @@ const MarkdownPage = ({ data }) => {
             {/*{sections['e'] && <div>e</div>}*/}
             {/*{sections['f'] && <div>f</div>}*/}
             {/*/!*{data.featuredimage.publicURL && <img src={data.featuredimage.publicURL} alt='' />}*!/*/}
-            <Hero heroBackground={data.herobackground} heroImage={data.heroimage} />
+            <Hero
+                heroBackground={data.herobackground}
+                heroImage={data.heroimage}
+                heroTitle={data.herotitle}
+                heroFirstParagraph={data.herofirstparagraph}
+                heroSecondParagraph={data.herosecondparagraph}
+            />
         </div>
     );
 };

@@ -106,6 +106,9 @@ exports.createPages = async ({ graphql, actions }) => {
                             }
                             herobackground
                             heroimage
+                            herotitle
+                            herofirstparagraph
+                            herosecondparagraph
                         }
                     }
                 }
