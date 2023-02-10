@@ -114,6 +114,8 @@ collections:
       - { label: 'Hero Background', name: 'herobackground', widget: image }
       - { label: 'Hero Image', name: 'heroimage', widget: image }
       - { label: 'Hero Title', name: 'herotitle', widget: 'string'}
+      - { label: 'Hero First Paragraph', name: 'herofirstparagraph', widget: 'string'}
+      - { label: 'Hero Second Paragraph', name: 'herosecondparagraph', widget: 'string'}
       - {
         label: 'Sections',
         name: 'sections',

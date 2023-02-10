@@ -9,14 +9,14 @@ const PagesPreview = ({ entry, getAsset }) => {
     const heroImage = getAsset(entry.getIn(['data', 'heroimage'])).path.replace('static', '');
     const heroBackground = getAsset(entry.getIn(['data', 'herobackground'])).path.replace('static', '');
 
-    console.log({ background: heroBackground, image: heroImage });
-
     return (
         <CSSInjector>
             <Hero
                 heroBackground={heroBackground}
                 heroImage={heroImage}
                 heroTitle={entry.getIn(['data', 'herotitle'])}
+                heroFirstParagraph={entry.getIn(['data', 'herofirstparagraph'])}
+                heroSecondParagraph={entry.getIn(['data', 'herosecondparagraph'])}
             />
         </CSSInjector>
     );
