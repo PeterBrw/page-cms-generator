@@ -24,11 +24,11 @@ const MarkdownPage = ({ data }) => {
             {/*{sections['f'] && <div>f</div>}*/}
             {/*/!*{data.featuredimage.publicURL && <img src={data.featuredimage.publicURL} alt='' />}*!/*/}
             <Hero
-                heroBackground={data.herobackground}
-                heroImage={data.heroimage}
-                heroTitle={data.herotitle}
-                heroFirstParagraph={data.herofirstparagraph}
-                heroSecondParagraph={data.herosecondparagraph}
+                heroBackground={data.hero.herobackground}
+                heroImage={data.hero.heroimage}
+                heroTitle={data.hero.herotitle}
+                heroFirstParagraph={data.hero.herofirstparagraph}
+                heroSecondParagraph={data.hero.herosecondparagraph}
             />
         </div>
     );

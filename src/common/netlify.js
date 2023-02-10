@@ -5,23 +5,17 @@ import JsonPage from '../components/jsonPages/jsonPage';
 import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 
-const PagesPreview = ({ entry, getAsset }) => {
-    const heroImage = getAsset(entry.getIn(['data', 'hero', 'heroimage'])).path.replace('static', '');
-    const heroBackground = getAsset(entry.getIn(['data', 'hero', 'herobackground'])).path.replace('static', '');
-
-    console.log(entry.getIn(['data', 'hero']).toJS());
-
+const PagesPreview = ({ entry }) => {
     return (
-        // <CSSInjector>
-        //     <Hero
-        //         heroBackground={heroBackground}
-        //         heroImage={heroImage}
-        //         heroTitle={entry.getIn(['data', 'hero', 'herotitle'])}
-        //         heroFirstParagraph={entry.getIn(['data', 'hero', 'herofirstparagraph'])}
-        //         heroSecondParagraph={entry.getIn(['data', 'hero', 'herosecondparagraph'])}
-        //     />
-        // </CSSInjector>
-        <div>test</div>
+        <CSSInjector>
+            <Hero
+                heroBackground={entry.getIn(['data', 'hero']).toJS().herobackground}
+                heroImage={entry.getIn(['data', 'hero']).toJS().heroimage}
+                heroTitle={entry.getIn(['data', 'hero']).toJS().herotitle}
+                heroFirstParagraph={entry.getIn(['data', 'hero']).toJS().herofirstparagraph}
+                heroSecondParagraph={entry.getIn(['data', 'hero']).toJS().herosecondparagraph}
+            />
+        </CSSInjector>
     );
 };
 
