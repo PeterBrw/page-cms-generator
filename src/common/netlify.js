@@ -8,8 +8,6 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
 const PagesPreview = ({ entry }) => {
-    console.log(entry.getIn(['data', 'leftsection']).toJS().leftsectionimage);
-
     return (
         <CSSInjector>
             <Hero
