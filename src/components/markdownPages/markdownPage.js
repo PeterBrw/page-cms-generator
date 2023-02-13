@@ -14,7 +14,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log({ right: data.firstsection.markdown, left: data.leftsection.markdown });
+    console.log(data)
 
     return (
         <div>
@@ -39,14 +39,14 @@ const MarkdownPage = ({ data }) => {
                 firstParagraph={data.firstsection.rightsectionfirstparagraph}
                 secondParagraph={data.firstsection.rightsecondparagraph}
                 image={data.firstsection.rightsectionimage}
-                markdown={data.firstsection.markdown}
+                markdown={data.firstsection.rightmarkdown}
             />
             <LeftSection
                 subtitle={data.leftsection.leftsectionsubtitle}
                 firstParagraph={data.leftsection.leftsectionfirstparagraph}
                 secondParagraph={data.leftsection.leftsecondparagraph}
                 image={data.leftsection.leftsectionimage}
-                markdown={data.leftsection.markdown}
+                markdown={data.leftsection.leftmarkdown}
             />
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
