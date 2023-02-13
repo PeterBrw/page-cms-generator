@@ -135,7 +135,7 @@ collections:
           - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string' }
           - { label: 'Right Section First Paragraph', name: 'rightsectionfirstparagraph', widget: 'string' }
           - { label: 'Right Section Second Paragraph', name: 'rightsecondparagraph', widget: 'string' }
-      - label: "First Section"
+      - label: "Left Section"
         name: "leftsection"
         widget: "object"
         fields:
