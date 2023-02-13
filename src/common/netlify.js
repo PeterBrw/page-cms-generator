@@ -11,23 +11,23 @@ const PagesPreview = ({ entry }) => {
     return (
         <CSSInjector>
             <Hero
-                heroBackground={entry.getIn(['data', 'hero']).toJS().herobackground}
-                heroImage={entry.getIn(['data', 'hero']).toJS().heroimage}
-                heroTitle={entry.getIn(['data', 'hero']).toJS().herotitle}
-                heroFirstParagraph={entry.getIn(['data', 'hero']).toJS().herofirstparagraph}
-                heroSecondParagraph={entry.getIn(['data', 'hero']).toJS().herosecondparagraph}
+                heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                heroTitle={entry.getIn(['data', 'hero'])?.toJS()?.herotitle}
+                heroFirstParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herofirstparagraph}
+                heroSecondParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herosecondparagraph}
             />
             <RightSection
-                subtitle={entry.getIn(['data', 'firstsection']).toJS().rightsectionsubtitle}
-                firstParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsectionfirstparagraph}
-                secondParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsecondparagraph}
-                image={entry.getIn(['data', 'firstsection']).toJS().rightsectionimage}
+                subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
+                firstParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionfirstparagraph}
+                secondParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsecondparagraph}
+                image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
             />
             <LeftSection
-                image={entry.getIn(['data', 'leftsection']).toJS().leftsectionimage}
-                subtitle={entry.getIn(['data', 'leftsection']).toJS().leftsectionsubtitle}
-                firstParagraph={entry.getIn(['data', 'leftsection']).toJS().leftsectionfirstparagraph}
-                secondParagraph={entry.getIn(['data', 'leftsection']).toJS().leftsecondparagraph}
+                image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
+                subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
+                firstParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionfirstparagraph}
+                secondParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsecondparagraph}
             />
         </CSSInjector>
     );
