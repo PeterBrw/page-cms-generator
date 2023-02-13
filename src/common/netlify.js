@@ -7,7 +7,6 @@ import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 
 const PagesPreview = ({ entry }) => {
-    console.log(entry.getIn(['data', 'leftsection']).toJS());
     return (
         <CSSInjector>
             <Hero

@@ -1,5 +1,11 @@
 import React from 'react';
 import { Container } from '../atoms/Containers';
+import { css } from 'twin.macro';
+
+const titleSection = css`
+    font-size: 1.75rem;
+    line-height: 2.188rem;
+`;
 
 const LeftSection = ({ image, subtitle, firstParagraph, secondParagraph }) => {
     return (
