@@ -22,12 +22,14 @@ const PagesPreview = ({ entry }) => {
                 firstParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionfirstparagraph}
                 secondParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsecondparagraph}
                 image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
+                markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
             />
             <LeftSection
                 image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
                 subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
                 firstParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionfirstparagraph}
                 secondParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsecondparagraph}
+                markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
             />
         </CSSInjector>
     );

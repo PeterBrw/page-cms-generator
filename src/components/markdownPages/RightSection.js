@@ -1,13 +1,15 @@
 import React from 'react';
 import { Container } from '../atoms/Containers';
 import { css } from 'twin.macro';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 const titleSection = css`
     font-size: 1.75rem;
     line-height: 2.188rem;
 `;
 
-const RightSection = ({ subtitle, firstParagraph, secondParagraph, image }) => {
+const RightSection = ({ subtitle, firstParagraph, secondParagraph, image, markdown }) => {
     return (
         <Container>
             <div className='py-8 md:py-12 lg:py-20'>
@@ -24,6 +26,11 @@ const RightSection = ({ subtitle, firstParagraph, secondParagraph, image }) => {
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
                             <p className='text-base mt-4'>{firstParagraph}</p>
                             <p className='text-base text-gray mt-4 font-semibold'>{secondParagraph}</p>
+                            <div className='blog-reset'>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                    {markdown}
+                                </ReactMarkdown>
+                            </div>
                         </div>
                     </div>
                     <div className='col-span-12 lg:col-span-6 mt-8 lg:mt-0 sm:mt-0'>
