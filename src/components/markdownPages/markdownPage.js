@@ -16,8 +16,6 @@ const MarkdownPage = ({ data }) => {
 
     console.log(data);
 
-    const { title, seoTitle } = data;
-
     return (
         <div>
             {/*<h1>title {title}</h1>*/}
