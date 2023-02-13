@@ -1,2 +1,9 @@
 @import url('blog-reset.css');
 @import url('new.css');
+
+.gradientBgBtn {
+    background-image: linear-gradient(to right, #0f26aa, #ff4a56);
+}
+.gradientBgBtn:hover {
+    background-image: linear-gradient(to left, #0f26aa, #ff4a56);
+}
