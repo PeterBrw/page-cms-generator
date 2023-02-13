@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './Hero';
 import RightSection from './RightSection';
+import LeftSection from './LeftSection';
 
 const MarkdownPage = ({ data }) => {
     const sections = data.sections.reduce(
@@ -36,6 +37,12 @@ const MarkdownPage = ({ data }) => {
                 firstParagraph={data.firstsection.rightsectionfirstparagraph}
                 secondParagraph={data.firstsection.rightsecondparagraph}
                 image={data.firstsection.rightsectionimage}
+            />
+            <LeftSection
+                subtitle={data.leftsection.leftsectionsubtitle}
+                firstParagraph={data.leftsection.leftsectionfirstparagraph}
+                secondParagraph={data.leftsection.leftsecondparagraph}
+                image={data.leftsection.leftsectionimage}
             />
         </div>
     );
