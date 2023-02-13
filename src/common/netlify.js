@@ -5,8 +5,11 @@ import JsonPage from '../components/jsonPages/jsonPage';
 import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
+import LeftSection from '../components/markdownPages/LeftSection';
 
 const PagesPreview = ({ entry }) => {
+    console.log(entry.getIn(['data', 'leftsection']).toJS().leftsectionimage);
+
     return (
         <CSSInjector>
             <Hero
@@ -21,6 +24,12 @@ const PagesPreview = ({ entry }) => {
                 firstParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsectionfirstparagraph}
                 secondParagraph={entry.getIn(['data', 'firstsection']).toJS().rightsecondparagraph}
                 image={entry.getIn(['data', 'firstsection']).toJS().rightsectionimage}
+            />
+            <LeftSection
+                image={entry.getIn(['data', 'leftsection']).toJS().leftsectionimage}
+                subtitle={entry.getIn(['data', 'leftsection']).toJS().leftsectionsubtitle}
+                firstParagraph={entry.getIn(['data', 'leftsection']).toJS().leftsectionfirstparagraph}
+                secondParagraph={entry.getIn(['data', 'leftsection']).toJS().leftsecondparagraph}
             />
         </CSSInjector>
     );
