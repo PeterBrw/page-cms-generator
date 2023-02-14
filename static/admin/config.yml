@@ -145,6 +145,7 @@ collections:
           - { label: 'Left Section First Paragraph', name: 'leftsectionfirstparagraph', widget: 'string' }
           - { label: 'Left Section Second Paragraph', name: 'leftsecondparagraph', widget: 'string' }
           - { label: 'Left Markdown', name: 'leftmarkdown', widget: 'markdown' }
+    - {label: "Draft", name: "draft", widget: "boolean", required: false, default: true}
   - name: 'navigations'
     label: 'Navigations'
     create: true
