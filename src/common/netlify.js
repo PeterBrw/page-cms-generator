@@ -131,3 +131,55 @@ CMS.registerEditorComponent({
         }
     ]
 });
+
+CMS.registerEditorComponent({
+    label: 'H1 Open',
+    id: 'headingOneOpen',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1]
+        },
+    toBlock: function ({ classes }, getAsset, fields) {
+        return `<h1 class="${classes || ''}">`;
+    },
+    toPreview: ({ classes }, getAsset, fields) => {
+        return `<h1 class="${classes}">`;
+    },
+    pattern: /^<h1 class="(.*?)">$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [
+                ' blog-image-shadow ',
+                ' rounded-sm ',
+                ' rounded ',
+                ' rounded-md ',
+                ' rounded-lg ',
+                ' rounded-2xl ',
+                ' rounded-3xl ',
+                ' rounded-full ',
+                ' shadow-lg ',
+                ' shadow-xl ',
+                ' shadow-2xl '
+            ]
+        }
+    ]
+});
+
+CMS.registerEditorComponent({
+    label: 'H1 Close',
+    id: 'headingOneClose',
+    fromBlock: (match) => match && {},
+    toBlock: function ({}, getAsset, fields) {
+        return `</h1>`;
+    },
+    toPreview: ({}, getAsset, fields) => {
+        return `</h1>`;
+    },
+    pattern: /^<\/h1>$/s,
+    fields: []
+});
