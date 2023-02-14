@@ -133,19 +133,20 @@ CMS.registerEditorComponent({
 });
 
 CMS.registerEditorComponent({
-    label: 'H1 Open',
-    id: 'headingOneOpen',
+    label: 'H1',
+    id: 'headingOne',
     fromBlock: (match) =>
         match && {
-            classes: match[1]
+            classes: match[1],
+            texth1: match[2]
         },
     toBlock: function ({ classes, texth1 }, getAsset, fields) {
-        return `<h1 class="${classes || ''}">${texth1 || ''}`;
+        return `<h1 class="${classes || ''}">${texth1 || ''}</h1>`;
     },
     toPreview: ({ classes, texth1 }, getAsset, fields) => {
-        return `<h1 class="${classes}">${texth1}`;
+        return `<h1 class="${classes}">${texth1}</h1>`;
     },
-    pattern: /^<h1 class="(.*?)">(.*?)$/s,
+    pattern: /^<h1 class="(.*?)">(.*?)<\/h1>$/s,
     fields: [
         {
             label: 'CSS Classes',
@@ -164,7 +165,7 @@ CMS.registerEditorComponent({
                 ' rounded-full ',
                 ' shadow-lg ',
                 ' shadow-xl ',
-                ' shadow-2xl '
+                ' text-blue '
             ]
         },
         {
@@ -173,18 +174,4 @@ CMS.registerEditorComponent({
             widget: 'string'
         }
     ]
-});
-
-CMS.registerEditorComponent({
-    label: 'H1 Close',
-    id: 'headingOneClose',
-    fromBlock: (match) => match && {},
-    toBlock: function ({}, getAsset, fields) {
-        return `</h1>`;
-    },
-    toPreview: ({}, getAsset, fields) => {
-        return `</h1>`;
-    },
-    pattern: /^<\/h1>$/s,
-    fields: []
 });
