@@ -139,13 +139,13 @@ CMS.registerEditorComponent({
         match && {
             classes: match[1]
         },
-    toBlock: function ({ classes }, getAsset, fields) {
-        return `<h1 class="${classes || ''}">`;
+    toBlock: function ({ classes, texth1 }, getAsset, fields) {
+        return `<h1 class="${classes || ''}">${texth1 || ''}`;
     },
-    toPreview: ({ classes }, getAsset, fields) => {
-        return `<h1 class="${classes}">`;
+    toPreview: ({ classes, texth1 }, getAsset, fields) => {
+        return `<h1 class="${classes}">${texth1}`;
     },
-    pattern: /^<h1 class="(.*?)">$/s,
+    pattern: /^<h1 class="(.*?)">(.*?)$/s,
     fields: [
         {
             label: 'CSS Classes',
@@ -166,6 +166,11 @@ CMS.registerEditorComponent({
                 ' shadow-xl ',
                 ' shadow-2xl '
             ]
+        },
+        {
+            label: 'Text H1',
+            name: 'texth1',
+            widget: 'string'
         }
     ]
 });
