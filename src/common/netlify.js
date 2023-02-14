@@ -154,19 +154,7 @@ CMS.registerEditorComponent({
             widget: 'select',
             multiple: true,
             default: [' blog-image-shadow '],
-            options: [
-                ' blog-image-shadow ',
-                ' rounded-sm ',
-                ' rounded ',
-                ' rounded-md ',
-                ' rounded-lg ',
-                ' rounded-2xl ',
-                ' rounded-3xl ',
-                ' rounded-full ',
-                ' shadow-lg ',
-                ' shadow-xl ',
-                ' text-blue '
-            ]
+            options: [' text-blue ', ' text-red ', ' text-xl ', ' text-2xl ', ' text-3xl ', ' text-4xl ', ' text-5xl ']
         },
         {
             label: 'Text H1',
