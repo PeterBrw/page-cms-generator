@@ -9,7 +9,7 @@ const titleSection = css`
     line-height: 2.188rem;
 `;
 
-const RightSection = ({ subtitle, firstParagraph, secondParagraph, image, markdown }) => {
+const RightSection = ({ subtitle, image, markdown }) => {
     return (
         <Container>
             <div className='py-8 md:py-12 lg:py-20'>
@@ -24,8 +24,6 @@ const RightSection = ({ subtitle, firstParagraph, secondParagraph, image, markdo
                             </h2>
                         </div>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                            <p className='text-base mt-4'>{firstParagraph}</p>
-                            <p className='text-base text-gray mt-4 font-semibold'>{secondParagraph}</p>
                             <div className='blog-reset'>
                                 <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                     {markdown}

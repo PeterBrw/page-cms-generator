@@ -28,8 +28,6 @@ const MarkdownPage = ({ data }) => {
             {sections['rightsection'] && (
                 <RightSection
                     subtitle={data.firstsection.rightsectionsubtitle}
-                    firstParagraph={data.firstsection.rightsectionfirstparagraph}
-                    secondParagraph={data.firstsection.rightsecondparagraph}
                     image={data.firstsection.rightsectionimage}
                     markdown={data.firstsection.rightmarkdown}
                 />
@@ -37,8 +35,6 @@ const MarkdownPage = ({ data }) => {
             {sections['leftsection'] && (
                 <LeftSection
                     subtitle={data.leftsection.leftsectionsubtitle}
-                    firstParagraph={data.leftsection.leftsectionfirstparagraph}
-                    secondParagraph={data.leftsection.leftsecondparagraph}
                     image={data.leftsection.leftsectionimage}
                     markdown={data.leftsection.leftmarkdown}
                 />

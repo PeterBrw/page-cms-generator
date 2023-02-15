@@ -9,7 +9,7 @@ const titleSection = css`
     line-height: 2.188rem;
 `;
 
-const LeftSection = ({ image, subtitle, firstParagraph, secondParagraph, markdown }) => {
+const LeftSection = ({ image, subtitle, markdown }) => {
     return (
         <Container>
             <div className='py-8 md:py-12 lg:py-20'>
@@ -29,8 +29,6 @@ const LeftSection = ({ image, subtitle, firstParagraph, secondParagraph, markdow
                             </h2>
                         </div>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                            <p className='text-base text-gray pt-12 pb-2'>{firstParagraph}</p>
-                            <p className='text-base text-gray py-2'>{secondParagraph}</p>
                             <div className='blog-reset'>
                                 <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                     {markdown}
