@@ -131,23 +131,21 @@ collections:
       - label: "First Section"
         name: "firstsection"
         widget: "object"
-        required: false
         fields:
-          - { label: 'Right Section Image', name: 'rightsectionimage', widget: image }
-          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string' }
-          - { label: 'Right Section First Paragraph', name: 'rightsectionfirstparagraph', widget: 'string' }
-          - { label: 'Right Section Second Paragraph', name: 'rightsecondparagraph', widget: 'string' }
-          - { label: 'Right Markdown', name: 'rightmarkdown', widget: 'markdown' }
+          - { label: 'Right Section Image', name: 'rightsectionimage', widget: image, required: false }
+          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string', required: false }
+          - { label: 'Right Section First Paragraph', name: 'rightsectionfirstparagraph', widget: 'string', required: false }
+          - { label: 'Right Section Second Paragraph', name: 'rightsecondparagraph', widget: 'string', required: false }
+          - { label: 'Right Markdown', name: 'rightmarkdown', widget: 'markdown', required: false }
       - label: "Left Section"
         name: "leftsection"
         widget: "object"
-        required: false
         fields:
-          - { label: 'Left Section Image', name: 'leftsectionimage', widget: image }
-          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'string' }
-          - { label: 'Left Section First Paragraph', name: 'leftsectionfirstparagraph', widget: 'string' }
-          - { label: 'Left Section Second Paragraph', name: 'leftsecondparagraph', widget: 'string' }
-          - { label: 'Left Markdown', name: 'leftmarkdown', widget: 'markdown' }
+          - { label: 'Left Section Image', name: 'leftsectionimage', widget: image, required: false }
+          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'string', required: false }
+          - { label: 'Left Section First Paragraph', name: 'leftsectionfirstparagraph', widget: 'string', required: false }
+          - { label: 'Left Section Second Paragraph', name: 'leftsecondparagraph', widget: 'string', required: false }
+          - { label: 'Left Markdown', name: 'leftmarkdown', widget: 'markdown', required: false }
   - name: 'navigations'
     label: 'Navigations'
     create: true
