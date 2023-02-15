@@ -28,6 +28,7 @@ const PagesPreview = ({ entry }) => {
                     heroTitle={entry.getIn(['data', 'hero'])?.toJS()?.herotitle}
                     heroFirstParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herofirstparagraph}
                     heroSecondParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herosecondparagraph}
+                    markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
                 />
             )}
             {sections['rightsection'] && (

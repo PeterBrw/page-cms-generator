@@ -3,6 +3,8 @@ import GradientButton from '../buttons/GradientButton';
 import LightDarkButton from '../buttons/LightDarkButton';
 import { Container, Row } from '../atoms/Containers';
 import { css } from 'twin.macro';
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const heroBg = (url) => css`
     background-image: linear-gradient(#eeeeee, #e4edfc);
@@ -14,7 +16,7 @@ const heroBg = (url) => css`
     }
 `;
 
-const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSecondParagraph }) => {
+const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSecondParagraph, markdown }) => {
     return (
         <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>
@@ -31,6 +33,9 @@ const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSe
                                 <p className='text-left text-base lg:text-lg mb-2 leading-relaxed text-gray'>
                                     {heroSecondParagraph}
                                 </p>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                    {markdown}
+                                </ReactMarkdown>
                                 <div className='flex mt-8 justify-start'>
                                     <a href='/'>
                                         <GradientButton text='Start Free Trial' />
