@@ -180,3 +180,38 @@ CMS.registerEditorComponent({
         }
     ]
 });
+
+CMS.registerEditorComponent({
+    label: 'H1 Hero',
+    id: 'headingOneHero',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1],
+            texth1: match[2]
+        },
+    toBlock: function ({ classes, texth1 }, getAsset, fields) {
+        return `<h1 class="text-left text-blue text-4xl lg:text-5xl leading-normal lg:leading-normal mb-16 font-montserrat ${
+            classes || ''
+        }">${texth1 || ''}</h1>`;
+    },
+    toPreview: ({ classes, texth1 }, getAsset, fields) => {
+        return `<h1 class="text-left text-blue text-4xl lg:text-5xl leading-normal lg:leading-normal mb-16 font-montserrat ${classes}">${texth1}</h1>`;
+    },
+    pattern:
+        /^<h1 class="text-left text-blue text-4xl lg:text-5xl leading-normal lg:leading-normal mb-16 font-montserrat (.*?)">(.*?)<\/h1>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [' text-blue ', ' text-red ', ' text-xl ', ' text-2xl ', ' text-3xl ', ' text-4xl ', ' text-5xl ']
+        },
+        {
+            label: 'Text H1',
+            name: 'texth1',
+            widget: 'string'
+        }
+    ]
+});
