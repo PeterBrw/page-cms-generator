@@ -131,6 +131,7 @@ collections:
       - label: "First Section"
         name: "firstsection"
         widget: "object"
+        required: false
         fields:
           - { label: 'Right Section Image', name: 'rightsectionimage', widget: image }
           - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string' }
@@ -140,6 +141,7 @@ collections:
       - label: "Left Section"
         name: "leftsection"
         widget: "object"
+        required: false
         fields:
           - { label: 'Left Section Image', name: 'leftsectionimage', widget: image }
           - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'string' }
