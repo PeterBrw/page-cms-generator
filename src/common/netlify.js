@@ -17,7 +17,7 @@ const PagesPreview = ({ entry }) => {
             {}
         );
 
-    console.log(sections);
+    console.log({ sections });
 
     return (
         <CSSInjector>
