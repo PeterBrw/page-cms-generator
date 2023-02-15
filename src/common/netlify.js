@@ -213,3 +213,47 @@ CMS.registerEditorComponent({
         }
     ]
 });
+
+CMS.registerEditorComponent({
+    label: 'p Hero',
+    id: 'paragraphHero',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1],
+            textp: match[2]
+        },
+    toBlock: function ({ classes, textp }, getAsset, fields) {
+        return `<p class="text-left text-base lg:text-lg leading-relaxed text-gray ${classes || ''}">${
+            textp || ''
+        }</p>`;
+    },
+    toPreview: ({ classes, textp }, getAsset, fields) => {
+        return `<p class="text-left text-base lg:text-lg leading-relaxed text-gray ${classes}">${textp}</p>`;
+    },
+    pattern: /^<p class="text-left text-base lg:text-lg leading-relaxed text-gray (.*?)">(.*?)<\/p>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [
+                ' text-blue ',
+                ' text-red ',
+                ' text-xl ',
+                ' text-2xl ',
+                ' text-3xl ',
+                ' text-4xl ',
+                ' text-5xl ',
+                ' mb-8 ',
+                ' mb-2 '
+            ]
+        },
+        {
+            label: 'Text H1',
+            name: 'textp',
+            widget: 'string'
+        }
+    ]
+});
