@@ -8,29 +8,46 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
 const PagesPreview = ({ entry }) => {
+    const sections = entry
+        .getIn(['data', 'sections'])
+        ?.toJS()
+        .reduce(
+            // eslint-disable-next-line
+            (acc, curr) => ((acc[curr] = true), acc),
+            {}
+        );
+
+    console.log(sections);
+
     return (
         <CSSInjector>
-            <Hero
-                heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
-                heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
-                heroTitle={entry.getIn(['data', 'hero'])?.toJS()?.herotitle}
-                heroFirstParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herofirstparagraph}
-                heroSecondParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herosecondparagraph}
-            />
-            <RightSection
-                subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
-                firstParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionfirstparagraph}
-                secondParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsecondparagraph}
-                image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
-                markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
-            />
-            <LeftSection
-                image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
-                subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
-                firstParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionfirstparagraph}
-                secondParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsecondparagraph}
-                markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
-            />
+            {sections['hero'] && (
+                <Hero
+                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                    heroTitle={entry.getIn(['data', 'hero'])?.toJS()?.herotitle}
+                    heroFirstParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herofirstparagraph}
+                    heroSecondParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herosecondparagraph}
+                />
+            )}
+            {sections['rightsection'] && (
+                <RightSection
+                    subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
+                    firstParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionfirstparagraph}
+                    secondParagraph={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsecondparagraph}
+                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
+                    markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
+                />
+            )}
+            {sections['leftsection'] && (
+                <LeftSection
+                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
+                    subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
+                    firstParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionfirstparagraph}
+                    secondParagraph={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsecondparagraph}
+                    markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
+                />
+            )}
         </CSSInjector>
     );
 };
