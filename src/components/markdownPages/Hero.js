@@ -3,8 +3,8 @@ import GradientButton from '../buttons/GradientButton';
 import LightDarkButton from '../buttons/LightDarkButton';
 import { Container, Row } from '../atoms/Containers';
 import { css } from 'twin.macro';
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 const heroBg = (url) => css`
     background-image: linear-gradient(#eeeeee, #e4edfc);
@@ -16,7 +16,7 @@ const heroBg = (url) => css`
     }
 `;
 
-const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSecondParagraph, markdown }) => {
+const Hero = ({ heroImage, heroBackground, markdown }) => {
     return (
         <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>
@@ -24,15 +24,6 @@ const Hero = ({ heroImage, heroBackground, heroTitle, heroFirstParagraph, heroSe
                     <Row>
                         <div className='col-span-12 lg:col-span-6 order-last lg:order-first'>
                             <div className='lg:mt-16 pt-4 max-w-xl mx-auto lg:mx-0'>
-                                <h1 className='text-left text-blue text-4xl lg:text-5xl leading-normal lg:leading-normal mb-16 font-montserrat'>
-                                    {heroTitle}
-                                </h1>
-                                <p className='text-left text-base lg:text-lg mb-8 leading-relaxed text-gray'>
-                                    {heroFirstParagraph}
-                                </p>
-                                <p className='text-left text-base lg:text-lg mb-2 leading-relaxed text-gray'>
-                                    {heroSecondParagraph}
-                                </p>
                                 <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                     {markdown}
                                 </ReactMarkdown>

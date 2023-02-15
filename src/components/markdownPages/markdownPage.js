@@ -22,9 +22,6 @@ const MarkdownPage = ({ data }) => {
                 <Hero
                     heroBackground={data.hero.herobackground}
                     heroImage={data.hero.heroimage}
-                    heroTitle={data.hero.herotitle}
-                    heroFirstParagraph={data.hero.herofirstparagraph}
-                    heroSecondParagraph={data.hero.herosecondparagraph}
                     markdown={data.hero.heromarkdown}
                 />
             )}

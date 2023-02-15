@@ -25,9 +25,6 @@ const PagesPreview = ({ entry }) => {
                 <Hero
                     heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
                     heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
-                    heroTitle={entry.getIn(['data', 'hero'])?.toJS()?.herotitle}
-                    heroFirstParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herofirstparagraph}
-                    heroSecondParagraph={entry.getIn(['data', 'hero'])?.toJS()?.herosecondparagraph}
                     markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
                 />
             )}
