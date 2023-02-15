@@ -257,3 +257,48 @@ CMS.registerEditorComponent({
         }
     ]
 });
+
+CMS.registerEditorComponent({
+    label: 'p section',
+    id: 'paragraphSection',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1],
+            textp: match[2]
+        },
+    toBlock: function ({ classes, textp }, getAsset, fields) {
+        return `<p class="text-base ${classes || ''}">${textp || ''}</p>`;
+    },
+    toPreview: ({ classes, textp }, getAsset, fields) => {
+        return `<p class="text-base ${classes}">${textp}</p>`;
+    },
+    pattern: /^<p class="text-base (.*?)">(.*?)<\/p>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [
+                ' text-left ',
+                ' text-base ',
+                ' lg:text-lg ',
+                ' leading-relaxed ',
+                ' leading-normal ',
+                ' font-montserrat ',
+                ' mt-8 ',
+                ' mt-4 ',
+                ' text-gray ',
+                ' font-semibold ',
+                ' mb-8 ',
+                ' mb-2 '
+            ]
+        },
+        {
+            label: 'Text H1',
+            name: 'textp',
+            widget: 'string'
+        }
+    ]
+});
