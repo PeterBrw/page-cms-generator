@@ -14,7 +14,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log(data)
+    console.log(sections);
 
     return (
         <div>

@@ -115,8 +115,8 @@ collections:
         label: 'Sections',
         name: 'sections',
         widget: 'select',
-        options: [ 'a', 'b', 'c', 'd', 'e', 'f' ],
-        default: 'a',
+        options: [ 'hero', 'rightsection', 'leftsection' ],
+        default: 'hero',
         multiple: true
       }
       - label: "Hero"
