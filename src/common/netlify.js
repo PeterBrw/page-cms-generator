@@ -23,15 +23,15 @@ const PagesPreview = ({ entry }) => {
         <CSSInjector>
             {sections['hero'] && (
                 <Hero
-                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground?.publicURL}
-                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage?.publicURL}
+                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
                     markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
                 />
             )}
             {sections['rightsection'] && (
                 <RightSection
                     subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
-                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage?.publicURL}
+                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
                     markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
                 />
             )}
