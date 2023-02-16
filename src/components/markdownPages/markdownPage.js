@@ -20,22 +20,22 @@ const MarkdownPage = ({ data }) => {
         <div>
             {sections['hero'] && (
                 <Hero
-                    heroBackground={data.hero.herobackground}
-                    heroImage={data.hero.heroimage}
+                    heroBackground={data.hero.herobackground.publicURL}
+                    heroImage={data.hero.heroimage.publicURL}
                     markdown={data.hero.heromarkdown}
                 />
             )}
             {sections['rightsection'] && (
                 <RightSection
                     subtitle={data.firstsection.rightsectionsubtitle}
-                    image={data.firstsection.rightsectionimage}
+                    image={data.firstsection.rightsectionimage.publicURL}
                     markdown={data.firstsection.rightmarkdown}
                 />
             )}
             {sections['leftsection'] && (
                 <LeftSection
                     subtitle={data.leftsection.leftsectionsubtitle}
-                    image={data.leftsection.leftsectionimage}
+                    image={data.leftsection.leftsectionimage.publicURL}
                     markdown={data.leftsection.leftmarkdown}
                 />
             )}

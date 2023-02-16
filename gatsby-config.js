@@ -2,8 +2,7 @@ module.exports = {
     siteMetadata: {
         title: 'Example',
         siteUrl: 'https://example.com/',
-        description:
-            'example'
+        description: 'example'
     },
     plugins: [
         `gatsby-plugin-image`,
@@ -68,7 +67,7 @@ module.exports = {
             resolve: `gatsby-plugin-google-tagmanager`,
             options: {
                 id: 'GTM-N7BJP68',
-                includeInDevelopment: false,
+                includeInDevelopment: false
             }
         },
         {
@@ -117,7 +116,13 @@ module.exports = {
                         resolve: `gatsby-remark-relative-images`,
                         options: {
                             staticFolderName: 'static',
-                            include: ['featuredimage']
+                            include: [
+                                'featuredimage',
+                                'leftsection.leftsectionimage',
+                                'firstsection.rightsectionimage',
+                                'hero.heroimage',
+                                'hero.herobackground'
+                            ]
                         }
                     },
                     {
@@ -138,9 +143,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [
-                    `Montserrat:400,500,600,700`,
-                ],
+                fonts: [`Montserrat:400,500,600,700`],
                 display: 'swap'
             }
         },
@@ -148,7 +151,7 @@ module.exports = {
             resolve: `gatsby-transformer-json`,
             options: {
                 typeName: `Json` // a fixed string
-            },
-        },
+            }
+        }
     ]
 };

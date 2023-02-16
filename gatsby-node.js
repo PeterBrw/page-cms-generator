@@ -102,18 +102,26 @@ exports.createPages = async ({ graphql, actions }) => {
                             seoTitle
                             sections
                             hero {
-                                herobackground
-                                heroimage
+                                herobackground {
+                                    publicURL
+                                }
+                                heroimage {
+                                    publicURL
+                                }
                                 heromarkdown
                             }
                             firstsection {
-                                rightsectionimage
+                                rightsectionimage {
+                                    publicURL
+                                }
                                 rightsectionsubtitle
                                 rightmarkdown
                             }
                             leftsection {
                                 leftsectionsubtitle
-                                leftsectionimage
+                                leftsectionimage {
+                                    publicURL
+                                }
                                 leftmarkdown
                             }
                         }

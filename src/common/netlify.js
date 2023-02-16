@@ -23,21 +23,21 @@ const PagesPreview = ({ entry }) => {
         <CSSInjector>
             {sections['hero'] && (
                 <Hero
-                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
-                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground?.publicURL}
+                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage?.publicURL}
                     markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
                 />
             )}
             {sections['rightsection'] && (
                 <RightSection
                     subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
-                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
+                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage?.publicURL}
                     markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
                 />
             )}
             {sections['leftsection'] && (
                 <LeftSection
-                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
+                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage?.publicURL}
                     subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
                     markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
                 />
