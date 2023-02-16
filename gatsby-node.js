@@ -145,10 +145,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
         posts.forEach((edge) => {
             const node = edge.node;
-            console.log({ page: node.frontmatter.seoTitle });
+            console.log(node)
+            console.log(`/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`);
             createPage({
                 // Path for this page — required
-                path: '/markdownpage/' + node.frontmatter.seoTitle + '/',
+                path: `/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`,
                 component: blogTemplate,
                 context: {
                     alldata: node
