@@ -5,6 +5,7 @@ import { Container, Row } from '../atoms/Containers';
 import { css } from 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const heroBg = (url) => css`
     background-image: linear-gradient(#eeeeee, #e4edfc);
@@ -39,7 +40,13 @@ const Hero = ({ heroImage, heroBackground, markdown, preview }) => {
                         </div>
                         <div className='col-span-12 lg:col-span-6'>
                             <div className='lg:mt-16 pt-4 max-w-lg lg:max-w-2xl mx-auto lg:mx-0'>
-                                <img src={heroImage} alt='Inventory graph-view with violated standards and policies' />
+                                {preview && (
+                                    <img
+                                        src={heroImage}
+                                        alt='Inventory graph-view with violated standards and policies'
+                                    />
+                                )}
+                                {!preview && <GatsbyImage alt='wutever' image={heroImage} />}
                             </div>
                         </div>
                     </Row>

@@ -32,6 +32,7 @@ const PagesPreview = ({ entry }) => {
                     heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
                     heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
                     markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
+                    preview={true}
                 />
             )}
             {sections['rightsection'] && (
@@ -39,6 +40,7 @@ const PagesPreview = ({ entry }) => {
                     subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
                     image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
                     markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
+                    preview={true}
                 />
             )}
             {sections['leftsection'] && (
@@ -46,6 +48,7 @@ const PagesPreview = ({ entry }) => {
                     image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
                     subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
                     markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
+                    preview={true}
                 />
             )}
         </CSSInjector>

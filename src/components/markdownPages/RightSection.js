@@ -3,13 +3,14 @@ import { Container } from '../atoms/Containers';
 import { css } from 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const titleSection = css`
     font-size: 1.75rem;
     line-height: 2.188rem;
 `;
 
-const RightSection = ({ subtitle, image, markdown }) => {
+const RightSection = ({ subtitle, image, markdown, preview }) => {
     return (
         <Container>
             <div className='py-8 md:py-12 lg:py-20'>
@@ -33,7 +34,8 @@ const RightSection = ({ subtitle, image, markdown }) => {
                     </div>
                     <div className='col-span-12 lg:col-span-6 mt-8 lg:mt-0 sm:mt-0'>
                         <div className='mx-auto max-w-xl lg:mx-0 lg:max-w-2xl'>
-                            <img src={image} alt='NIST Standard detailed view' />
+                            {preview && <img src={image} alt='NIST Standard detailed view' />}
+                            {!preview && <GatsbyImage alt='' image={image} />}
                         </div>
                     </div>
                 </div>

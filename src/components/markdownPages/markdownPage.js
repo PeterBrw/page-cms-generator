@@ -21,21 +21,21 @@ const MarkdownPage = ({ data }) => {
             {sections['hero'] && (
                 <Hero
                     heroBackground={data.hero.herobackground}
-                    heroImage={data.hero.heroimage.publicURL}
+                    heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
                     markdown={data.hero.heromarkdown}
                 />
             )}
             {sections['rightsection'] && (
                 <RightSection
                     subtitle={data.firstsection.rightsectionsubtitle}
-                    image={data.firstsection.rightsectionimage.publicURL}
+                    image={data.firstsection.rightsectionimage.childImageSharp.gatsbyImageData}
                     markdown={data.firstsection.rightmarkdown}
                 />
             )}
             {sections['leftsection'] && (
                 <LeftSection
                     subtitle={data.leftsection.leftsectionsubtitle}
-                    image={data.leftsection.leftsectionimage.publicURL}
+                    image={data.leftsection.leftsectionimage.childImageSharp.gatsbyImageData}
                     markdown={data.leftsection.leftmarkdown}
                 />
             )}
