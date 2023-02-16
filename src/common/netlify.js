@@ -19,6 +19,12 @@ const PagesPreview = ({ entry }) => {
 
     console.log({ sections });
 
+    console.log({
+        heroImage: entry.getIn(['data', 'hero'])?.toJS()?.heroimage,
+        rightSectionImage: entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage,
+        leftSectionImage: entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage
+    });
+
     return (
         <CSSInjector>
             {sections['hero'] && (
@@ -37,7 +43,7 @@ const PagesPreview = ({ entry }) => {
             )}
             {sections['leftsection'] && (
                 <LeftSection
-                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage?.publicURL}
+                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
                     subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
                     markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
                 />

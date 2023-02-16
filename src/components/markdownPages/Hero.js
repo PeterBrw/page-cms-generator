@@ -16,7 +16,7 @@ const heroBg = (url) => css`
     }
 `;
 
-const Hero = ({ heroImage, heroBackground, markdown }) => {
+const Hero = ({ heroImage, heroBackground, markdown, preview }) => {
     return (
         <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>

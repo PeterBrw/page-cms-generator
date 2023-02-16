@@ -20,7 +20,7 @@ const MarkdownPage = ({ data }) => {
         <div>
             {sections['hero'] && (
                 <Hero
-                    heroBackground={data.hero.herobackground.publicURL}
+                    heroBackground={data.hero.herobackground}
                     heroImage={data.hero.heroimage.publicURL}
                     markdown={data.hero.heromarkdown}
                 />

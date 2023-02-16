@@ -102,17 +102,21 @@ exports.createPages = async ({ graphql, actions }) => {
                             seoTitle
                             sections
                             hero {
-                                herobackground {
-                                    publicURL
-                                }
+                                herobackground
                                 heroimage {
                                     publicURL
+                                    childImageSharp {
+                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
+                                    }
                                 }
                                 heromarkdown
                             }
                             firstsection {
                                 rightsectionimage {
                                     publicURL
+                                    childImageSharp {
+                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
+                                    }
                                 }
                                 rightsectionsubtitle
                                 rightmarkdown
@@ -121,6 +125,9 @@ exports.createPages = async ({ graphql, actions }) => {
                                 leftsectionsubtitle
                                 leftsectionimage {
                                     publicURL
+                                    childImageSharp {
+                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
+                                    }
                                 }
                                 leftmarkdown
                             }
