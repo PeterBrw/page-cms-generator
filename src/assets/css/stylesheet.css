@@ -7,3 +7,8 @@
 .gradientBgBtn:hover {
     background-image: linear-gradient(to left, #0f26aa, #ff4a56);
 }
+
+.titleSection {
+    font-size: 1.75rem;
+    line-height: 2.188rem;
+}

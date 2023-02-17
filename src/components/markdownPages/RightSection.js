@@ -28,11 +28,9 @@ const RightSection = ({ subtitle, image, markdown, preview }) => {
                             </ReactMarkdown>
                         </div>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                            <div className='blog-reset'>
-                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
-                                    {markdown}
-                                </ReactMarkdown>
-                            </div>
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                {markdown}
+                            </ReactMarkdown>
                         </div>
                     </div>
                     <div className='col-span-12 lg:col-span-6 mt-8 lg:mt-0 sm:mt-0'>
