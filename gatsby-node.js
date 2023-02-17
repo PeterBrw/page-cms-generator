@@ -34,10 +34,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     }
 };
 
-const postsByCategory = {};
-const postsPerPage = 9;
-
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage, createRedirect } = actions;
 
     for (let i = 0; i < redirects.length; i++) {
@@ -138,24 +135,76 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `).then((result) => {
-        if (result.errors) throw result.errors;
+        if (result.errors) {
+            reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors);
+            return;
+        }
 
         const posts = result.data.allMarkdownRemark.edges;
 
-        // console.log({ posts });
-
-        posts.forEach((edge) => {
-            const node = edge.node;
-            console.log(node)
-            console.log(`/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`);
-            createPage({
-                // Path for this page — required
-                path: `/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`,
-                component: blogTemplate,
-                context: {
-                    alldata: node
-                }
+        if (posts.length > 0) {
+            posts.forEach((edge) => {
+                const node = edge.node;
+                console.log(node);
+                console.log(`/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`);
+                createPage({
+                    // Path for this page — required
+                    path: `/${node.frontmatter.categoryPath}/${node.frontmatter.seoTitle}/`,
+                    component: blogTemplate,
+                    context: {
+                        alldata: node
+                    }
+                });
             });
-        });
+        }
     });
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+
+    createTypes(`
+    type MarkdownRemark implements Node {
+        frontmatter: Frontmatter
+        rawMarkdownBody: String
+    }
+    
+    type Frontmatter {
+        templateKey: String
+        title: String
+        seoTitle: String
+        categoryPath: String
+        sections: [String]
+        hero: Hero
+        firstsection: FirstSection
+        leftsection: LeftSection
+        authors: String
+        categories: [String]
+        title: String
+        description: String
+        seoDescription: String
+        date: Date @dateformat
+        permalink: String
+        featuredimage: File @fileByRelativePath
+        featuredpost: Boolean
+    }
+    
+    type Hero {
+        herobackground: String
+        heroimage: File @fileByRelativePath
+        heromarkdown: String
+    }
+    
+    type FirstSection {
+        rightsectionimage: File @fileByRelativePath
+        rightsectionsubtitle: String
+        rightmarkdown: String
+    }
+    
+    type LeftSection {
+        leftsectionsubtitle: String
+        leftsectionimage: File @fileByRelativePath
+        leftmarkdown: String
+    }
+  `);
 };
