@@ -144,7 +144,7 @@ collections:
         widget: "object"
         fields:
           - { label: 'Left Section Image', name: 'leftsectionimage', widget: image, required: false }
-          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'string', required: false }
+          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'markdown', required: false }
           - { label: 'Left Markdown', name: 'leftmarkdown', widget: 'markdown', required: false }
   - name: 'navigations'
     label: 'Navigations'

@@ -23,12 +23,9 @@ const LeftSection = ({ image, subtitle, markdown, preview }) => {
                     </div>
                     <div className='col-span-12 lg:col-span-6'>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                            <h2
-                                className='font-bold text-primary border-title-partly font-montserrat lg:mt-3'
-                                css={titleSection}
-                            >
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                 {subtitle}
-                            </h2>
+                            </ReactMarkdown>
                         </div>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
                             <div className='blog-reset'>
