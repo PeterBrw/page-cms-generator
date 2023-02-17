@@ -6,6 +6,12 @@ import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
+import { css } from 'twin.macro';
+
+const titleSection = css`
+    font-size: 1.75rem;
+    line-height: 2.188rem;
+`;
 
 const PagesPreview = ({ entry }) => {
     const sections = entry
@@ -257,8 +263,43 @@ CMS.registerEditorComponent({
             ]
         },
         {
-            label: 'Text H1',
+            label: 'Text p',
             name: 'textp',
+            widget: 'string'
+        }
+    ]
+});
+
+CMS.registerEditorComponent({
+    label: 'H2 Subtitle',
+    id: 'headingTwoSubtitle',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1],
+            texth1: match[2]
+        },
+    toBlock: function ({ classes, texth1 }, getAsset, fields) {
+        return `<h2 class="font-bold text-primary leading-normal border-title-partly font-montserrat lg:mt-3 ${
+            classes || ''
+        }" css={titleSection}>${texth1 || ''}</h2>`;
+    },
+    toPreview: ({ classes, texth1 }, getAsset, fields) => {
+        return `<h2 class="font-bold text-primary leading-normal border-title-partly font-montserrat lg:mt-3 ${classes}" css={titleSection}>${texth1}</h2>`;
+    },
+    pattern:
+        /^<h2 class="font-bold text-primary leading-normal border-title-partly font-montserrat lg:mt-3 (.*?)" css={titleSection}>(.*?)<\/h2>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [' text-blue ', ' text-red ', ' text-xl ', ' text-2xl ', ' text-3xl ', ' text-4xl ', ' text-5xl ']
+        },
+        {
+            label: 'Text H1',
+            name: 'texth1',
             widget: 'string'
         }
     ]

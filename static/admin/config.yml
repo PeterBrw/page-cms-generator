@@ -137,7 +137,7 @@ collections:
         widget: "object"
         fields:
           - { label: 'Right Section Image', name: 'rightsectionimage', widget: image, required: false }
-          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'string', required: false }
+          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'markdown', required: false }
           - { label: 'Right Markdown', name: 'rightmarkdown', widget: 'markdown', required: false }
       - label: "Left Section"
         name: "leftsection"
