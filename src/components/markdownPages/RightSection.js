@@ -1,14 +1,8 @@
 import React from 'react';
 import { Container } from '../atoms/Containers';
-import { css } from 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
-const titleSection = css`
-    font-size: 1.75rem;
-    line-height: 2.188rem;
-`;
 
 const RightSection = ({ subtitle, image, markdown, preview }) => {
     return (
@@ -17,12 +11,6 @@ const RightSection = ({ subtitle, image, markdown, preview }) => {
                 <div className='sm:grid sm:grid-cols-12 sm:gap-12'>
                     <div className='col-span-12 lg:col-span-6'>
                         <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-md'>
-                            {/*<h2*/}
-                            {/*    className='font-bold text-primary leading-normal border-title-partly font-montserrat lg:mt-3'*/}
-                            {/*    css={titleSection}*/}
-                            {/*>*/}
-                            {/*    {subtitle}*/}
-                            {/*</h2>*/}
                             <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                 {subtitle}
                             </ReactMarkdown>

@@ -14,8 +14,6 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-    console.log(sections);
-
     return (
         <div>
             {sections['hero'] && (

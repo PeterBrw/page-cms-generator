@@ -1,14 +1,8 @@
 import React from 'react';
 import { Container } from '../atoms/Containers';
-import { css } from 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
-const titleSection = css`
-    font-size: 1.75rem;
-    line-height: 2.188rem;
-`;
 
 const LeftSection = ({ image, subtitle, markdown, preview }) => {
     return (
