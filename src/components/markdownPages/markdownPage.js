@@ -14,7 +14,7 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
-     console.log(data)
+    console.log(data);
 
     return (
         <div>
@@ -40,13 +40,13 @@ const MarkdownPage = ({ data }) => {
                 />
             )}
             {data?.sectionsList?.map((section, index) => {
-                if (section.listSection.imagePosition === 'left') {
+                if (section.imagePosition === 'left') {
                     return (
                         <LeftSection
                             key={index}
-                            subtitle={section.listSection.listSectionSubtitle}
-                            image={section.listSection.listSectionImage.childImageSharp.gatsbyImageData}
-                            markdown={section.listSection.listSectionMarkdown}
+                            subtitle={section.listSectionSubtitle}
+                            image={section.listSectionImage.childImageSharp.gatsbyImageData}
+                            markdown={section.listSectionMarkdown}
                         />
                     );
                 }

@@ -130,18 +130,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 leftmarkdown
                             }
                             sectionsList {
-                                listSection {
-                                    imagePosition
-                                    listSectionImage {
-                                        publicURL
-                                        childImageSharp {
-                                            gatsbyImageData(width: 1920, layout: CONSTRAINED)
-                                        }
+                                imagePosition
+                                listSectionImage {
+                                    publicURL
+                                    childImageSharp {
+                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
                                     }
-                                    listSectionAlt
-                                    listSectionSubtitle
-                                    listSectionMarkdown
                                 }
+                                listSectionAlt
+                                listSectionSubtitle
+                                listSectionMarkdown
                             }
                         }
                     }
