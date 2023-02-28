@@ -25,6 +25,8 @@ const PagesPreview = ({ entry }) => {
         leftSectionImage: entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage
     });
 
+    console.log(entry.getIn(['data', 'sectionsList'])?.toJS());
+
     return (
         <CSSInjector>
             {sections['hero'] && (
@@ -51,6 +53,33 @@ const PagesPreview = ({ entry }) => {
                     preview={true}
                 />
             )}
+            {entry
+                .getIn(['data', 'sectionsList'])
+                ?.toJS()
+                .map((section, index) => {
+                    if (section.imagePosition === 'left') {
+                        return (
+                            <LeftSection
+                                key={index}
+                                subtitle={section.listSectionSubtitle}
+                                image={section.listSectionImage}
+                                markdown={section.listSectionMarkdown}
+                                preview={true}
+                            />
+                        );
+                    }
+                    if (section.imagePosition === 'right') {
+                        return (
+                            <RightSection
+                                key={index}
+                                subtitle={section.listSectionSubtitle}
+                                image={section.listSectionImage}
+                                markdown={section.listSectionMarkdown}
+                                preview={true}
+                            />
+                        );
+                    }
+                })}
         </CSSInjector>
     );
 };
