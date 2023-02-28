@@ -14,6 +14,8 @@ const MarkdownPage = ({ data }) => {
         {}
     );
 
+     console.log(data)
+
     return (
         <div>
             {sections['hero'] && (
@@ -37,6 +39,19 @@ const MarkdownPage = ({ data }) => {
                     markdown={data.leftsection.leftmarkdown}
                 />
             )}
+            {data.sectionsList.map((section, index) => {
+                if (section.listSection.imagePosition === 'left') {
+                    return (
+                        <LeftSection
+                            key={index}
+                            subtitle={section.listSection.listSectionSubtitle}
+                            image={section.listSection.listSectionImage.childImageSharp.gatsbyImageData}
+                            markdown={section.listSection.listSectionMarkdown}
+                        />
+                    );
+                }
+                return null;
+            })}
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
                 <Container>

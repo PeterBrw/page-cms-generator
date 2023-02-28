@@ -120,7 +120,8 @@ module.exports = {
                                 'featuredimage',
                                 'leftsection.leftsectionimage',
                                 'firstsection.rightsectionimage',
-                                'hero.heroimage'
+                                'hero.heroimage',
+                                'sectionsList'
                             ]
                         }
                     },

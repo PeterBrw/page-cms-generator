@@ -129,6 +129,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 }
                                 leftmarkdown
                             }
+                            sectionsList {
+                                listSection {
+                                    imagePosition
+                                    listSectionImage {
+                                        publicURL
+                                        childImageSharp {
+                                            gatsbyImageData(width: 1920, layout: CONSTRAINED)
+                                        }
+                                    }
+                                    listSectionAlt
+                                    listSectionSubtitle
+                                    listSectionMarkdown
+                                }
+                            }
                         }
                     }
                 }
@@ -187,6 +201,20 @@ exports.createSchemaCustomization = ({ actions }) => {
         permalink: String
         featuredimage: File @fileByRelativePath
         featuredpost: Boolean
+        sectionsList: [SectionsList]
+    }
+
+
+    type SectionsList {
+        listSection: ListSection
+    }
+
+    type ListSection {
+        imagePosition: String
+        listSectionImage: File @fileByRelativePath
+        listSectionAlt: String
+        listSectionSubtitle: String
+        listSectionMarkdown: String
     }
     
     type Hero {
