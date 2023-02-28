@@ -79,6 +79,7 @@ const PagesPreview = ({ entry }) => {
                             />
                         );
                     }
+                    return null;
                 })}
         </CSSInjector>
     );
