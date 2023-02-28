@@ -118,8 +118,6 @@ module.exports = {
                             staticFolderName: 'static',
                             include: [
                                 'featuredimage',
-                                'leftsection.leftsectionimage',
-                                'firstsection.rightsectionimage',
                                 'hero.heroimage',
                                 'sectionsList'
                             ]

@@ -181,12 +181,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         sectionsList: [SectionsList]
     }
 
-
     type SectionsList {
-        listSection: ListSection
-    }
-
-    type ListSection {
         imagePosition: String
         listSectionImage: File @fileByRelativePath
         listSectionAlt: String
