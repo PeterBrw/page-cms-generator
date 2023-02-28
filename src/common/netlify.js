@@ -8,51 +8,14 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
 const PagesPreview = ({ entry }) => {
-    const sections = entry
-        .getIn(['data', 'sections'])
-        ?.toJS()
-        .reduce(
-            // eslint-disable-next-line
-            (acc, curr) => ((acc[curr] = true), acc),
-            {}
-        );
-
-    console.log({ sections });
-
-    console.log({
-        heroImage: entry.getIn(['data', 'hero'])?.toJS()?.heroimage,
-        rightSectionImage: entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage,
-        leftSectionImage: entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage
-    });
-
-    console.log(entry.getIn(['data', 'sectionsList'])?.toJS());
-
     return (
         <CSSInjector>
-            {sections['hero'] && (
-                <Hero
-                    heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
-                    heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
-                    markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
-                    preview={true}
-                />
-            )}
-            {sections['rightsection'] && (
-                <RightSection
-                    subtitle={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionsubtitle}
-                    image={entry.getIn(['data', 'firstsection'])?.toJS()?.rightsectionimage}
-                    markdown={entry.getIn(['data', 'firstsection'])?.toJS()?.rightmarkdown}
-                    preview={true}
-                />
-            )}
-            {sections['leftsection'] && (
-                <LeftSection
-                    image={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionimage}
-                    subtitle={entry.getIn(['data', 'leftsection'])?.toJS()?.leftsectionsubtitle}
-                    markdown={entry.getIn(['data', 'leftsection'])?.toJS()?.leftmarkdown}
-                    preview={true}
-                />
-            )}
+            <Hero
+                heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
+                preview={true}
+            />
             {entry
                 .getIn(['data', 'sectionsList'])
                 ?.toJS()

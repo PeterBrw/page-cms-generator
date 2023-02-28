@@ -98,7 +98,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             title
                             seoTitle
                             categoryPath
-                            sections
                             hero {
                                 herobackground
                                 heroimage {
@@ -108,26 +107,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                     }
                                 }
                                 heromarkdown
-                            }
-                            firstsection {
-                                rightsectionimage {
-                                    publicURL
-                                    childImageSharp {
-                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
-                                    }
-                                }
-                                rightsectionsubtitle
-                                rightmarkdown
-                            }
-                            leftsection {
-                                leftsectionsubtitle
-                                leftsectionimage {
-                                    publicURL
-                                    childImageSharp {
-                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
-                                    }
-                                }
-                                leftmarkdown
                             }
                             sectionsList {
                                 imagePosition

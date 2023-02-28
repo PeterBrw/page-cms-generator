@@ -117,14 +117,6 @@ collections:
         widget: 'select',
         options: [ 'use-cases', 'products' ],
       }
-      - {
-        label: 'Sections',
-        name: 'sections',
-        widget: 'select',
-        options: [ 'hero', 'rightsection', 'leftsection' ],
-        default: [ 'hero' ],
-        multiple: true
-      }
       - label: "Hero"
         name: "hero"
         widget: "object"
@@ -132,20 +124,6 @@ collections:
           - { label: 'Hero Background', name: 'herobackground', widget: image }
           - { label: 'Hero Image', name: 'heroimage', widget: image }
           - { label: 'Hero Markdown', name: 'heromarkdown', widget: 'markdown' }
-      - label: "First Section"
-        name: "firstsection"
-        widget: "object"
-        fields:
-          - { label: 'Right Section Image', name: 'rightsectionimage', widget: image, required: false }
-          - { label: 'Right Section Subtitle', name: 'rightsectionsubtitle', widget: 'markdown', required: false }
-          - { label: 'Right Markdown', name: 'rightmarkdown', widget: 'markdown', required: false }
-      - label: "Left Section"
-        name: "leftsection"
-        widget: "object"
-        fields:
-          - { label: 'Left Section Image', name: 'leftsectionimage', widget: image, required: false }
-          - { label: 'Left Section Subtitle', name: 'leftsectionsubtitle', widget: 'markdown', required: false }
-          - { label: 'Left Markdown', name: 'leftmarkdown', widget: 'markdown', required: false }
       - label: 'Sections List'
         name: 'sectionsList'
         widget: 'list'

@@ -8,37 +8,15 @@ import cloudIcon from '../../assets/images/cloud-icon.svg';
 import corner from '../../assets/images/corner-campaigns-iam-security.svg';
 
 const MarkdownPage = ({ data }) => {
-    const sections = data.sections.reduce(
-        // eslint-disable-next-line
-        (acc, curr) => ((acc[curr] = true), acc),
-        {}
-    );
-
     console.log(data);
 
     return (
         <div>
-            {sections['hero'] && (
-                <Hero
-                    heroBackground={data.hero.herobackground}
-                    heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
-                    markdown={data.hero.heromarkdown}
-                />
-            )}
-            {sections['rightsection'] && (
-                <RightSection
-                    subtitle={data.firstsection.rightsectionsubtitle}
-                    image={data.firstsection.rightsectionimage.childImageSharp.gatsbyImageData}
-                    markdown={data.firstsection.rightmarkdown}
-                />
-            )}
-            {sections['leftsection'] && (
-                <LeftSection
-                    subtitle={data.leftsection.leftsectionsubtitle}
-                    image={data.leftsection.leftsectionimage.childImageSharp.gatsbyImageData}
-                    markdown={data.leftsection.leftmarkdown}
-                />
-            )}
+            <Hero
+                heroBackground={data.hero.herobackground}
+                heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
+                markdown={data.hero.heromarkdown}
+            />
             {data?.sectionsList?.map((section, index) => {
                 if (section.imagePosition === 'left') {
                     return (
