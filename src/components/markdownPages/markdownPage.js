@@ -39,7 +39,7 @@ const MarkdownPage = ({ data }) => {
                     markdown={data.leftsection.leftmarkdown}
                 />
             )}
-            {data.sectionsList.map((section, index) => {
+            {data?.sectionsList?.map((section, index) => {
                 if (section.listSection.imagePosition === 'left') {
                     return (
                         <LeftSection

@@ -151,22 +151,18 @@ collections:
         widget: 'list'
         allow_add: true
         fields:
-          - label: "List Section"
-            name: "listSection"
-            widget: "object"
-            fields:
-              - {
-                label: 'Image Position',
-                name: 'imagePosition',
-                widget: 'select',
-                options: [ 'left', 'right' ],
-                default: [ 'left' ],
-                multiple: false
-              }
-              - { label: 'List Section Image', name: 'listSectionImage', widget: image, required: false }
-              - { label: 'List Section Alt', name: 'listSectionAlt', widget: 'string', required: false }
-              - { label: 'List Section Subtitle', name: 'listSectionSubtitle', widget: 'markdown', required: false }
-              - { label: 'List Section Markdown', name: 'listSectionMarkdown', widget: 'markdown', required: false }
+          - {
+            label: 'Image Position',
+            name: 'imagePosition',
+            widget: 'select',
+            options: [ 'left', 'right' ],
+            default: [ 'left' ],
+            multiple: false
+          }
+          - { label: 'List Section Image', name: 'listSectionImage', widget: image, required: false }
+          - { label: 'List Section Alt', name: 'listSectionAlt', widget: 'string', required: false }
+          - { label: 'List Section Subtitle', name: 'listSectionSubtitle', widget: 'markdown', required: false }
+          - { label: 'List Section Markdown', name: 'listSectionMarkdown', widget: 'markdown', required: false }
   - name: 'navigations'
     label: 'Navigations'
     create: true
