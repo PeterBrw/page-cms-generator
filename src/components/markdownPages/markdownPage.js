@@ -40,6 +40,9 @@ const MarkdownPage = ({ data }) => {
                 }
                 return null;
             })}
+            {data?.anotherList?.map((section, index) => {
+                return <p>{section.imagePosition}</p>;
+            })}
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
                 <Container>
