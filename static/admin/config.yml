@@ -166,6 +166,7 @@ collections:
           - { label: 'Hero Background', name: 'herobackground', widget: image, required: false }
           - { label: 'Hero Image', name: 'heroimage', widget: image, required: false }
           - { label: 'Hero Markdown', name: 'heromarkdown', widget: 'markdown', hint: 'For title use H1 Hero', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'navigations'
     label: 'Navigations'
     create: true

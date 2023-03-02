@@ -133,6 +133,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 listSectionMarkdown
                             }
                         }
+                        rawMarkdownBody
                     }
                 }
             }
@@ -192,6 +193,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         featuredpost: Boolean
         sectionsList: [SectionsList]
         anotherList: [SectionsList]
+        markdownBody: String
     }
 
     type SectionsList {

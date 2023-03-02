@@ -6,6 +6,7 @@ import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
+import MarkdownArea from '../components/markdownPages/MarkdownArea';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -44,6 +45,7 @@ const PagesPreview = ({ entry }) => {
                     }
                     return null;
                 })}
+            {entry.getIn(['data', 'body'])?.toJS() && <MarkdownArea data={entry.getIn(['data', 'body'])?.toJS()} />}
         </CSSInjector>
     );
 };
