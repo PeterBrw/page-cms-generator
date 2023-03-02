@@ -11,4 +11,4 @@ anotherHero:
   heromarkdown: <img src="" alt="" title="" class=" blog-image-shadow "
     style="width:auto;height:auto;"/>
 ---
-<img src="/img/mockup.png" alt="test" title="test" class=" rounded-2xl " style="width:auto;height:auto;"/>
+<img src="/img/mockup.png" alt="test" title="test" class=" rounded-2xl " style="width:18.75rem;height:12.5rem;"/>
