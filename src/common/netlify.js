@@ -22,7 +22,7 @@ const PagesPreview = ({ entry }) => {
                 .getIn(['data', 'sectionsList'])
                 ?.toJS()
                 .map((section, index) => {
-                    if (section.imagePosition === 'left') {
+                    if (section?.imagePosition === 'left') {
                         return (
                             <LeftSection
                                 key={index}
@@ -33,7 +33,7 @@ const PagesPreview = ({ entry }) => {
                             />
                         );
                     }
-                    if (section.imagePosition === 'right') {
+                    if (section?.imagePosition === 'right') {
                         return (
                             <RightSection
                                 key={index}
