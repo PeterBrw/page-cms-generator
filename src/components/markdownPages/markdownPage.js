@@ -8,8 +8,8 @@ import cloudIcon from '../../assets/images/cloud-icon.svg';
 import corner from '../../assets/images/corner-campaigns-iam-security.svg';
 import MarkdownArea from './MarkdownArea';
 
-const MarkdownPage = ({ data }) => {
-    console.log(data);
+const MarkdownPage = ({ data, rawMarkdownBody }) => {
+    console.log(rawMarkdownBody);
 
     return (
         <div>
@@ -44,7 +44,7 @@ const MarkdownPage = ({ data }) => {
             {data?.anotherList?.map((section, index) => {
                 return <p>{section.imagePosition}</p>;
             })}
-            {data.rawMarkdownBody && <MarkdownArea data={data} />}
+            {rawMarkdownBody && <MarkdownArea data={rawMarkdownBody} />}
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
                 <Container>

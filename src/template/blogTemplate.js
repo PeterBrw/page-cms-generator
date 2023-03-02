@@ -4,8 +4,6 @@ import MarkdownPage from '../components/markdownPages/markdownPage';
 const BlogDetail = ({ pageContext }) => {
     const { alldata } = pageContext;
 
-    console.log(alldata);
-
-    return <MarkdownPage data={alldata.frontmatter} />;
+    return <MarkdownPage data={alldata.frontmatter} rawMarkdownBody={alldata.rawMarkdownBody} />;
 };
 export default BlogDetail;
