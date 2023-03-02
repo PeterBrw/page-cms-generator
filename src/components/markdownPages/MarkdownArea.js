@@ -5,7 +5,7 @@ import rehypeRaw from 'rehype-raw';
 const MarkdownArea = ({ data }) => {
     return (
         <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
-            {data.rawMarkdownBody}
+            {data}
         </ReactMarkdown>
     );
 };
