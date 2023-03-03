@@ -6,10 +6,8 @@ import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
-import MarkdownArea from '../components/markdownPages/MarkdownArea';
 
 const PagesPreview = ({ entry }) => {
-    console.log(entry.getIn(['data', 'body']))
     return (
         <CSSInjector>
             <Hero
@@ -46,7 +44,6 @@ const PagesPreview = ({ entry }) => {
                     }
                     return null;
                 })}
-            {entry.getIn(['data', 'body']) && <MarkdownArea data={entry.getIn(['data', 'body'])} />}
         </CSSInjector>
     );
 };
@@ -84,11 +81,10 @@ CMS.registerEditorComponent({
             height: match[6]
         },
     toBlock: function ({ image, alt, title, classes, width, height }, getAsset, fields) {
-        console.log(height)
         return `<img src="${image || ''}" alt="${alt || ''}" title="${title || ''}" class="${
             classes || ''
         }" style="width:${width / 16 || 'auto'}${width >= 1 ? 'rem' : ''};height:${height / 16 || 'auto'}${
-            height >=1 ? 'rem' : ''
+            height >= 1 ? 'rem' : ''
         };"/>`;
     },
     toPreview: ({ image, alt, title, classes, width, height }, getAsset, fields) => {

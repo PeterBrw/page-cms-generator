@@ -120,20 +120,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 listSectionSubtitle
                                 listSectionMarkdown
                             }
-                            anotherList {
-                                imagePosition
-                                listSectionImage {
-                                    publicURL
-                                    childImageSharp {
-                                        gatsbyImageData(width: 1920, layout: CONSTRAINED)
-                                    }
-                                }
-                                listSectionAlt
-                                listSectionSubtitle
-                                listSectionMarkdown
-                            }
                         }
-                        rawMarkdownBody
                     }
                 }
             }
