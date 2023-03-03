@@ -10,4 +10,4 @@ hero:
 anotherHero:
   heromarkdown: ""
 ---
-<img src="/img/mockup.png" alt="test" title="test" class=" rounded-2xl " style="width:18.75rem;height:12.5rem;"/>
+<img src="/img/mockup.png" alt="" title="" class=" blog-image-shadow " style="width:auto;height:auto;"/>
