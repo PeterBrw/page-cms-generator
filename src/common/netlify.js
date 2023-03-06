@@ -7,75 +7,57 @@ import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
-const updateArr = (arr, index, component) => {
-    if (index === 0) {
-        arr[0] = component;
-        return [...arr];
-    }
-    if (index === 1) {
-        arr[1] = component;
-        return [...arr];
-    }
-    if (index === 2) {
-        arr[2] = component;
-        return [...arr];
-    }
-};
-
 const PagesPreview = ({ entry }) => {
-    const sectionList = entry.getIn(['data', 'sectionList'])?.toJS();
-    let sectionsToDisplay = [];
-
-    entry
-        .getIn(['data', 'sections'])
-        ?.toJS()
-        .forEach((item, index, array) => {
-            if (item === 'hero') {
-                sectionsToDisplay = updateArr(
-                    sectionsToDisplay,
-                    index,
-                    <Hero
-                        heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
-                        heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
-                        markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
-                        preview={true}
-                    />
-                );
-            }
-            if (item === 'sectionList') {
-                sectionList?.map((section, index) => {
-                    if (section?.imagePosition === 'left') {
-                        sectionsToDisplay = updateArr(
-                            sectionsToDisplay,
-                            index,
-                            <LeftSection
-                                key={index}
-                                subtitle={section.listSectionSubtitle}
-                                image={section.listSectionImage}
-                                markdown={section.listSectionMarkdown}
+    return (
+        <CSSInjector>
+            {entry
+                .getIn(['data', 'sections'])
+                ?.toJS()
+                .map((item) => {
+                    if (item === 'hero') {
+                        return (
+                            <Hero
+                                heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                                heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                                markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
                                 preview={true}
                             />
                         );
                     }
-                    if (section?.imagePosition === 'right') {
-                        sectionsToDisplay = updateArr(
-                            sectionsToDisplay,
-                            index,
-                            <RightSection
-                                key={index}
-                                subtitle={section.listSectionSubtitle}
-                                image={section.listSectionImage}
-                                markdown={section.listSectionMarkdown}
-                                preview={true}
-                            />
-                        );
+                    if (item === 'sectionList') {
+                        return entry
+                            .getIn(['data', 'sectionList'])
+                            ?.toJS()
+                            ?.map((section, index) => {
+                                if (section?.imagePosition === 'left') {
+                                    return (
+                                        <LeftSection
+                                            key={index}
+                                            subtitle={section.listSectionSubtitle}
+                                            image={section.listSectionImage}
+                                            markdown={section.listSectionMarkdown}
+                                            preview={true}
+                                        />
+                                    );
+                                }
+                                if (section?.imagePosition === 'right') {
+                                    return (
+                                        <RightSection
+                                            key={index}
+                                            subtitle={section.listSectionSubtitle}
+                                            image={section.listSectionImage}
+                                            markdown={section.listSectionMarkdown}
+                                            preview={true}
+                                        />
+                                    );
+                                }
+                                return null;
+                            });
                     }
                     return null;
-                });
-            }
-        });
-
-    return <CSSInjector>{sectionsToDisplay}</CSSInjector>;
+                })}
+        </CSSInjector>
+    );
 };
 
 CMS.registerPreviewTemplate('pages', PagesPreview);
