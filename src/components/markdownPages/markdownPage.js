@@ -8,47 +8,47 @@ import cloudIcon from '../../assets/images/cloud-icon.svg';
 import corner from '../../assets/images/corner-campaigns-iam-security.svg';
 
 const MarkdownPage = ({ data, rawMarkdownBody }) => {
-    const sectionsToDisplay = data?.sections?.forEach((item, index) => {
-        if (item === 'hero') {
-            return (
-                <Hero
-                    heroBackground={data.hero.herobackground}
-                    heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
-                    markdown={data.hero.heromarkdown}
-                />
-            );
-        }
-        if (item === 'sectionList') {
-            data?.sectionList?.map((section, index) => {
-                if (section?.imagePosition === 'left') {
-                    return (
-                        <LeftSection
-                            key={index}
-                            subtitle={section.listSectionSubtitle}
-                            image={section.listSectionImage.childImageSharp.gatsbyImageData}
-                            markdown={section.listSectionMarkdown}
-                        />
-                    );
-                }
-                if (section?.imagePosition === 'right') {
-                    return (
-                        <RightSection
-                            key={index}
-                            subtitle={section.listSectionSubtitle}
-                            image={section.listSectionImage.childImageSharp.gatsbyImageData}
-                            markdown={section.listSectionMarkdown}
-                        />
-                    );
-                }
-                return null;
-            });
-        }
-        return null;
-    });
-
     return (
         <div>
-            {sectionsToDisplay}
+            {data?.sections?.map((item) => {
+                if (item === 'hero') {
+                    return (
+                        <Hero
+                            heroBackground={data.hero.herobackground}
+                            heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
+                            markdown={data.hero.heromarkdown}
+                            key={data.hero.heromarkdown}
+                        />
+                    );
+                }
+                if (item === 'sectionList') {
+                    console.log(data?.sectionList);
+                    return data?.sectionList?.map((section, index) => {
+                        if (section?.imagePosition === 'left') {
+                            return (
+                                <LeftSection
+                                    key={index}
+                                    subtitle={section.listSectionSubtitle}
+                                    image={section.listSectionImage.childImageSharp.gatsbyImageData}
+                                    markdown={section.listSectionMarkdown}
+                                />
+                            );
+                        }
+                        if (section?.imagePosition === 'right') {
+                            return (
+                                <RightSection
+                                    key={index}
+                                    subtitle={section.listSectionSubtitle}
+                                    image={section.listSectionImage.childImageSharp.gatsbyImageData}
+                                    markdown={section.listSectionMarkdown}
+                                />
+                            );
+                        }
+                        return null;
+                    });
+                }
+                return null;
+            })}
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
                 <Container>
