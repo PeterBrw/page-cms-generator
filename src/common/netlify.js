@@ -8,24 +8,29 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
 const updateArr = (arr, index, component) => {
+    console.log('arr: ', index);
     if (index === 0) {
-        return [component, arr[1], arr[2]];
+        arr[0] = component;
+        return [...arr];
     }
     if (index === 1) {
-        return [arr[0], component, arr[2]];
+        arr[1] = component;
+        return [...arr];
     }
     if (index === 2) {
-        return [arr[0], arr[1], component];
+        arr[2] = component;
+        return [...arr];
     }
 };
 
 const PagesPreview = ({ entry }) => {
     const sectionList = entry.getIn(['data', 'sectionList'])?.toJS();
     let sectionsToDisplay = [];
+
     entry
         .getIn(['data', 'sections'])
         ?.toJS()
-        .forEach((item, index) => {
+        .forEach((item, index, array) => {
             if (item === 'hero') {
                 sectionsToDisplay = updateArr(
                     sectionsToDisplay,
