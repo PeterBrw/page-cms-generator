@@ -124,8 +124,8 @@ collections:
           - { label: 'Hero Background', name: 'herobackground', widget: image }
           - { label: 'Hero Image', name: 'heroimage', widget: image }
           - { label: 'Hero Markdown', name: 'heromarkdown', widget: 'markdown', hint: 'For title use H1 Hero'}
-      - label: 'Sections List'
-        name: 'sectionsList'
+      - label: 'Section List'
+        name: 'sectionList'
         widget: 'list'
         allow_add: true
         fields:

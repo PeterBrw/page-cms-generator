@@ -17,7 +17,7 @@ const MarkdownPage = ({ data, rawMarkdownBody }) => {
                 heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
                 markdown={data.hero.heromarkdown}
             />
-            {data?.sectionsList?.map((section, index) => {
+            {data?.sectionList?.map((section, index) => {
                 if (section?.imagePosition === 'left') {
                     return (
                         <LeftSection

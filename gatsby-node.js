@@ -108,7 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 }
                                 heromarkdown
                             }
-                            sectionsList {
+                            sectionList {
                                 imagePosition
                                 listSectionImage {
                                     publicURL
@@ -178,12 +178,12 @@ exports.createSchemaCustomization = ({ actions }) => {
         permalink: String
         featuredimage: File @fileByRelativePath
         featuredpost: Boolean
-        sectionsList: [SectionsList]
-        anotherList: [SectionsList]
+        sectionList: [SectionList]
+        anotherList: [SectionList]
         markdownBody: String
     }
 
-    type SectionsList {
+    type SectionList {
         imagePosition: String
         listSectionImage: File @fileByRelativePath
         listSectionAlt: String

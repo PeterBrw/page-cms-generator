@@ -17,7 +17,7 @@ const PagesPreview = ({ entry }) => {
                 preview={true}
             />
             {entry
-                .getIn(['data', 'sectionsList'])
+                .getIn(['data', 'sectionList'])
                 ?.toJS()
                 .map((section, index) => {
                     if (section?.imagePosition === 'left') {
