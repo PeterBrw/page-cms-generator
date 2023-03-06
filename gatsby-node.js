@@ -98,6 +98,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             title
                             seoTitle
                             categoryPath
+                            sections
                             hero {
                                 herobackground
                                 heroimage {
@@ -181,6 +182,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         sectionList: [SectionList]
         anotherList: [SectionList]
         markdownBody: String
+        sections: [String]
     }
 
     type SectionList {

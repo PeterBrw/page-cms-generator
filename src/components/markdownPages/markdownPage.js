@@ -8,16 +8,18 @@ import cloudIcon from '../../assets/images/cloud-icon.svg';
 import corner from '../../assets/images/corner-campaigns-iam-security.svg';
 
 const MarkdownPage = ({ data, rawMarkdownBody }) => {
-    console.log(rawMarkdownBody);
-
-    return (
-        <div>
-            <Hero
-                heroBackground={data.hero.herobackground}
-                heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
-                markdown={data.hero.heromarkdown}
-            />
-            {data?.sectionList?.map((section, index) => {
+    const sectionsToDisplay = data?.sections?.forEach((item, index) => {
+        if (item === 'hero') {
+            return (
+                <Hero
+                    heroBackground={data.hero.herobackground}
+                    heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
+                    markdown={data.hero.heromarkdown}
+                />
+            );
+        }
+        if (item === 'sectionList') {
+            data?.sectionList?.map((section, index) => {
                 if (section?.imagePosition === 'left') {
                     return (
                         <LeftSection
@@ -39,7 +41,14 @@ const MarkdownPage = ({ data, rawMarkdownBody }) => {
                     );
                 }
                 return null;
-            })}
+            });
+        }
+        return null;
+    });
+
+    return (
+        <div>
+            {sectionsToDisplay}
             <div className='bg-gradient-to-b from-selago to-white relative z-10' id='confidence'>
                 <img src={corner} width={300} className='hidden md:block absolute top-0 right-0 m-0 z-20' alt='' />
                 <Container>

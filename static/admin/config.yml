@@ -117,6 +117,14 @@ collections:
         widget: 'select',
         options: [ 'use-cases', 'products' ],
       }
+      - {
+        label: 'Sections',
+        name: 'sections',
+        widget: 'select',
+        options: [ 'hero', 'sectionList', 'anotherList', 'anotherHero' ],
+        default: [ 'hero' ],
+        multiple: true
+      }
       - label: "Hero"
         name: "hero"
         widget: "object"

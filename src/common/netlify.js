@@ -7,21 +7,43 @@ import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
+const updateArr = (arr, index, component) => {
+    if (index === 0) {
+        return [component, arr[1], arr[2]];
+    }
+    if (index === 1) {
+        return [arr[0], component, arr[2]];
+    }
+    if (index === 2) {
+        return [arr[0], arr[1], component];
+    }
+};
+
 const PagesPreview = ({ entry }) => {
-    return (
-        <CSSInjector>
-            <Hero
-                heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
-                heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
-                markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
-                preview={true}
-            />
-            {entry
-                .getIn(['data', 'sectionList'])
-                ?.toJS()
-                .map((section, index) => {
+    const sectionList = entry.getIn(['data', 'sectionList'])?.toJS();
+    let sectionsToDisplay = [];
+    entry
+        .getIn(['data', 'sections'])
+        ?.toJS()
+        .forEach((item, index) => {
+            if (item === 'hero') {
+                sectionsToDisplay = updateArr(
+                    sectionsToDisplay,
+                    index,
+                    <Hero
+                        heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
+                        heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
+                        markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
+                        preview={true}
+                    />
+                );
+            }
+            if (item === 'sectionList') {
+                sectionList?.map((section, index) => {
                     if (section?.imagePosition === 'left') {
-                        return (
+                        sectionsToDisplay = updateArr(
+                            sectionsToDisplay,
+                            index,
                             <LeftSection
                                 key={index}
                                 subtitle={section.listSectionSubtitle}
@@ -32,7 +54,9 @@ const PagesPreview = ({ entry }) => {
                         );
                     }
                     if (section?.imagePosition === 'right') {
-                        return (
+                        sectionsToDisplay = updateArr(
+                            sectionsToDisplay,
+                            index,
                             <RightSection
                                 key={index}
                                 subtitle={section.listSectionSubtitle}
@@ -43,9 +67,11 @@ const PagesPreview = ({ entry }) => {
                         );
                     }
                     return null;
-                })}
-        </CSSInjector>
-    );
+                });
+            }
+        });
+
+    return <CSSInjector>{sectionsToDisplay}</CSSInjector>;
 };
 
 CMS.registerPreviewTemplate('pages', PagesPreview);
