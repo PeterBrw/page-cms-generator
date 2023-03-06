@@ -22,7 +22,6 @@ const MarkdownPage = ({ data, rawMarkdownBody }) => {
                     );
                 }
                 if (item === 'sectionList') {
-                    console.log(data?.sectionList);
                     return data?.sectionList?.map((section, index) => {
                         if (section?.imagePosition === 'left') {
                             return (

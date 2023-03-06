@@ -8,7 +8,6 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 
 const updateArr = (arr, index, component) => {
-    console.log('arr: ', index);
     if (index === 0) {
         arr[0] = component;
         return [...arr];
