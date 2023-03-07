@@ -4,6 +4,7 @@ import RightSection from './RightSection';
 import LeftSection from './LeftSection';
 import Cta from './Cta';
 import CloudComplianceSection from './CloudComplianceSection';
+import AlignEntities from './AlignEntities';
 
 const MarkdownPage = ({ data }) => {
     return (
@@ -45,6 +46,9 @@ const MarkdownPage = ({ data }) => {
                         }
                         return null;
                     });
+                }
+                if (item === 'alignEntities') {
+                    return <AlignEntities />;
                 }
                 if (item === 'cloudComplianceSection') {
                     return <CloudComplianceSection />;
