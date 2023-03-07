@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '../atoms/Containers';
 import headerImage from '../../assets/images/remote-work-heading-image.png';
+import { css } from 'twin.macro';
 
 const titleSection = css`
     font-size: 1.75rem;
