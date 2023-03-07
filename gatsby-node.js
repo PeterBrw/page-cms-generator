@@ -197,7 +197,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         listSectionAlt: String
         listSectionSubtitle: String
         listSectionMarkdown: String
-        listSectionBackground: [String]
+        listSectionBackground: String
     }
     
     type Hero {
