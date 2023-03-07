@@ -121,6 +121,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 listSectionSubtitle
                                 listSectionMarkdown
                             }
+                            cta {
+                                ctaMarkdown
+                            }
                         }
                     }
                 }
@@ -183,6 +186,11 @@ exports.createSchemaCustomization = ({ actions }) => {
         anotherList: [SectionList]
         markdownBody: String
         sections: [String]
+        cta: CTA
+    }
+    
+    type CTA {
+        ctaMarkdown: String
     }
 
     type SectionList {

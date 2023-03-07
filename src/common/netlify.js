@@ -6,6 +6,7 @@ import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
+import Cta from '../components/markdownPages/Cta';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -53,6 +54,9 @@ const PagesPreview = ({ entry }) => {
                                 }
                                 return null;
                             });
+                    }
+                    if (item === 'cta') {
+                        return <Cta markdown={entry.getIn(['data', 'cta'])?.toJS()?.ctaMarkdown} />;
                     }
                     return null;
                 })}
@@ -287,6 +291,40 @@ CMS.registerEditorComponent({
     },
     pattern:
         /^<h2 class="titleSection font-bold text-primary leading-normal border-title-partly font-montserrat lg:mt-3 (.*?)">(.*?)<\/h2>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            default: [' blog-image-shadow '],
+            options: [' text-blue ', ' text-red ', ' text-xl ', ' text-2xl ', ' text-3xl ', ' text-4xl ', ' text-5xl ']
+        },
+        {
+            label: 'Text H1',
+            name: 'texth1',
+            widget: 'string'
+        }
+    ]
+});
+
+CMS.registerEditorComponent({
+    label: 'H1 CTA',
+    id: 'headingOneCta',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1],
+            texth1: match[2]
+        },
+    toBlock: function ({ classes, texth1 }, getAsset, fields) {
+        return `<h1 class="text-center px-2 mt-4 mb-2 font-montserrat font-semibold ${classes || ''}">${
+            texth1 || ''
+        }</h1>`;
+    },
+    toPreview: ({ classes, texth1 }, getAsset, fields) => {
+        return `<h1 class="text-center px-2 mt-4 mb-2 font-montserrat font-semibold ${classes}">${texth1}</h1>`;
+    },
+    pattern: /^<h1 class="(.*?)">(.*?)<\/h1>$/s,
     fields: [
         {
             label: 'CSS Classes',
