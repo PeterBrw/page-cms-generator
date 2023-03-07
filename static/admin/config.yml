@@ -159,7 +159,7 @@ collections:
         name: 'cta'
         widget: 'object'
         fields:
-          - { label: 'CTA Markdown', name: 'ctaMarkdown', widget: 'markdown', required: false }
+          - { label: 'CTA Markdown', name: 'ctaMarkdown', widget: 'markdown', required: false, hint: 'Use H1 CTA and nothing more' }
   - name: 'navigations'
     label: 'Navigations'
     create: true
