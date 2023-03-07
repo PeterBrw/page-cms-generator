@@ -38,6 +38,7 @@ const PagesPreview = ({ entry }) => {
                                             subtitle={section.listSectionSubtitle}
                                             image={section.listSectionImage}
                                             markdown={section.listSectionMarkdown}
+                                            backgroundColor={section.listSectionBackground}
                                             preview={true}
                                         />
                                     );
@@ -49,6 +50,7 @@ const PagesPreview = ({ entry }) => {
                                             subtitle={section.listSectionSubtitle}
                                             image={section.listSectionImage}
                                             markdown={section.listSectionMarkdown}
+                                            backgroundColor={section.listSectionBackground}
                                             preview={true}
                                         />
                                     );

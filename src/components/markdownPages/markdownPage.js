@@ -28,6 +28,7 @@ const MarkdownPage = ({ data }) => {
                                     subtitle={section.listSectionSubtitle}
                                     image={section.listSectionImage.childImageSharp.gatsbyImageData}
                                     markdown={section.listSectionMarkdown}
+                                    backgroundColor={section.listSectionBackground}
                                 />
                             );
                         }
@@ -38,6 +39,7 @@ const MarkdownPage = ({ data }) => {
                                     subtitle={section.listSectionSubtitle}
                                     image={section.listSectionImage.childImageSharp.gatsbyImageData}
                                     markdown={section.listSectionMarkdown}
+                                    backgroundColor={section.listSectionBackground}
                                 />
                             );
                         }

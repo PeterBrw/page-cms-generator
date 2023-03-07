@@ -1,12 +1,17 @@
 import React from 'react';
-import { Container } from '../atoms/Containers';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { css } from 'twin.macro';
 
-const LeftSection = ({ image, subtitle, markdown, preview }) => {
+const LeftSection = ({ image, subtitle, markdown, preview, backgroundColor }) => {
     return (
-        <Container>
+        <div
+            className='container max-w-7xl m-auto px-4 lg:px-8'
+            css={css`
+                background-color: ${backgroundColor ? backgroundColor : ''};
+            `}
+        >
             <div className='py-8 md:py-12 lg:py-20'>
                 <div className='sm:grid sm:grid-cols-12 sm:gap-12'>
                     <div className='col-span-12 lg:col-span-6 mt-8 sm:mt-0  hidden lg:block'>
@@ -37,7 +42,7 @@ const LeftSection = ({ image, subtitle, markdown, preview }) => {
                     </div>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 

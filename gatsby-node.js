@@ -120,6 +120,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 listSectionAlt
                                 listSectionSubtitle
                                 listSectionMarkdown
+                                listSectionBackground
                             }
                             cta {
                                 ctaMarkdown
@@ -196,6 +197,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         listSectionAlt: String
         listSectionSubtitle: String
         listSectionMarkdown: String
+        listSectionBackground: [String]
     }
     
     type Hero {
