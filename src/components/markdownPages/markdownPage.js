@@ -3,8 +3,9 @@ import Hero from './Hero';
 import RightSection from './RightSection';
 import LeftSection from './LeftSection';
 import Cta from './Cta';
+import CloudComplianceSection from './CloudComplianceSection';
 
-const MarkdownPage = ({ data, rawMarkdownBody }) => {
+const MarkdownPage = ({ data }) => {
     return (
         <div>
             {data?.sections?.map((item) => {
@@ -42,6 +43,9 @@ const MarkdownPage = ({ data, rawMarkdownBody }) => {
                         }
                         return null;
                     });
+                }
+                if (item === 'cloudComplianceSection') {
+                    return <CloudComplianceSection />;
                 }
                 if (item === 'cta') {
                     return <Cta markdown={data?.cta?.ctaMarkdown} />;

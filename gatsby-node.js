@@ -171,8 +171,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         categoryPath: String
         sections: [String]
         hero: Hero
-        firstsection: FirstSection
-        leftsection: LeftSection
         authors: String
         categories: [String]
         title: String
@@ -183,7 +181,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         featuredimage: File @fileByRelativePath
         featuredpost: Boolean
         sectionList: [SectionList]
-        anotherList: [SectionList]
         markdownBody: String
         sections: [String]
         cta: CTA

@@ -7,6 +7,7 @@ import CSSInjector from './CSSInjector';
 import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 import Cta from '../components/markdownPages/Cta';
+import CloudComplianceSection from '../components/markdownPages/CloudComplianceSection';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -54,6 +55,9 @@ const PagesPreview = ({ entry }) => {
                                 }
                                 return null;
                             });
+                    }
+                    if (item === 'cloudComplianceSection') {
+                        return <CloudComplianceSection />;
                     }
                     if (item === 'cta') {
                         return <Cta markdown={entry.getIn(['data', 'cta'])?.toJS()?.ctaMarkdown} />;
