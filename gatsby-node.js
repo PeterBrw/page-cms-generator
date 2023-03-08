@@ -109,18 +109,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 }
                                 heromarkdown
                             }
-                            sectionList {
-                                imagePosition
-                                listSectionImage {
+                            textImageRow {
+                                rowImagePosition
+                                rowImage {
                                     publicURL
                                     childImageSharp {
                                         gatsbyImageData(width: 1920, layout: CONSTRAINED)
                                     }
                                 }
-                                listSectionAlt
-                                listSectionSubtitle
-                                listSectionMarkdown
-                                listSectionBackground
+                                rowAlt
+                                rowSubtitle
+                                rowMarkdown
+                                rowBackground
                             }
                             cta {
                                 ctaMarkdown
@@ -181,7 +181,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         permalink: String
         featuredimage: File @fileByRelativePath
         featuredpost: Boolean
-        sectionList: [SectionList]
+        textImageRow: [TextImageRow]
         markdownBody: String
         sections: [String]
         cta: CTA
@@ -191,13 +191,13 @@ exports.createSchemaCustomization = ({ actions }) => {
         ctaMarkdown: String
     }
 
-    type SectionList {
-        imagePosition: String
-        listSectionImage: File @fileByRelativePath
-        listSectionAlt: String
-        listSectionSubtitle: String
-        listSectionMarkdown: String
-        listSectionBackground: String
+    type TextImageRow {
+        rowImagePosition: String
+        rowImage: File @fileByRelativePath
+        rowAlt: String
+        rowSubtitle: String
+        rowMarkdown: String
+        rowBackground: String
     }
     
     type Hero {
