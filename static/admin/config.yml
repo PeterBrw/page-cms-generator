@@ -121,7 +121,7 @@ collections:
         label: 'Sections',
         name: 'sections',
         widget: 'select',
-        options: [ 'hero', 'sectionList', 'alignEntities', 'cloudComplianceSection', 'cta' ],
+        options: [ 'hero', 'textImageRow', 'alignEntities', 'cloudComplianceSection', 'cta' ],
         default: [ 'hero' ],
         multiple: true
       }
