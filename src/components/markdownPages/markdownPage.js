@@ -54,7 +54,7 @@ const MarkdownPage = ({ data }) => {
                     return <CloudComplianceSection />;
                 }
                 if (item === 'ctaSection') {
-                    return <Cta markdown={data?.cta?.ctaMarkdown} />;
+                    return <Cta markdown={data?.ctaSection?.ctaMarkdown} />;
                 }
                 return null;
             })}

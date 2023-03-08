@@ -66,7 +66,7 @@ const PagesPreview = ({ entry }) => {
                         return <AlignEntities />;
                     }
                     if (item === 'ctaSection') {
-                        return <Cta markdown={entry.getIn(['data', 'cta'])?.toJS()?.ctaMarkdown} />;
+                        return <Cta markdown={entry.getIn(['data', 'ctaSection'])?.toJS()?.ctaMarkdown} />;
                     }
                     return null;
                 })}
