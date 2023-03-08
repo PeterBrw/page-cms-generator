@@ -116,7 +116,7 @@ module.exports = {
                         resolve: `gatsby-remark-relative-images`,
                         options: {
                             staticFolderName: 'static',
-                            include: ['featuredimage', 'hero.heroimage', 'sectionList']
+                            include: ['featuredimage', 'hero.heroimage', 'textImageRow']
                         }
                     },
                     {
