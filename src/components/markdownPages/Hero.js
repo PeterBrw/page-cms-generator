@@ -25,9 +25,11 @@ const Hero = ({ heroImage, heroBackground, markdown, preview }) => {
                     <Row>
                         <div className='col-span-12 lg:col-span-6 order-last lg:order-first'>
                             <div className='lg:mt-16 pt-4 max-w-xl mx-auto lg:mx-0'>
-                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
-                                    {markdown}
-                                </ReactMarkdown>
+                                <div className='blog-reset'>
+                                    <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                        {markdown}
+                                    </ReactMarkdown>
+                                </div>
                                 <div className='flex mt-8 justify-start'>
                                     <a href='/'>
                                         <GradientButton text='Start Free Trial' />

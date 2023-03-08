@@ -23,9 +23,11 @@ const LeftSection = ({ image, subtitle, markdown, preview, backgroundColor }) =>
                         </div>
                         <div className='col-span-12 lg:col-span-6'>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
-                                    {subtitle}
-                                </ReactMarkdown>
+                                <div className='blog-reset'>
+                                    <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                        {subtitle}
+                                    </ReactMarkdown>
+                                </div>
                             </div>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
                                 <div className='blog-reset'>

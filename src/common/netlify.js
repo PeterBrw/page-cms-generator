@@ -8,7 +8,7 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 import Cta from '../components/markdownPages/Cta';
 import CloudComplianceSection from '../components/markdownPages/CloudComplianceSection';
-import AlignEntities from "../components/markdownPages/AlignEntities";
+import AlignEntities from '../components/markdownPages/AlignEntities';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -348,6 +348,31 @@ CMS.registerEditorComponent({
             label: 'Text H1',
             name: 'texth1',
             widget: 'string'
+        }
+    ]
+});
+
+CMS.registerEditorComponent({
+    label: 'Break line',
+    id: 'breakline',
+    fromBlock: (match) =>
+        match && {
+            classes: match[1]
+        },
+    toBlock: function ({ classes }, getAsset, fields) {
+        return `<br class="${classes || ''}" />`;
+    },
+    toPreview: ({ classes }, getAsset, fields) => {
+        return `<br class="${classes}" />`;
+    },
+    pattern: /^<brclass="(.*?)"\/>$/s,
+    fields: [
+        {
+            label: 'CSS Classes',
+            name: 'classes',
+            widget: 'select',
+            multiple: true,
+            options: [' text-blue ', ' text-red ', ' text-xl ', ' text-2xl ', ' text-3xl ', ' text-4xl ', ' text-5xl ']
         }
     ]
 });
