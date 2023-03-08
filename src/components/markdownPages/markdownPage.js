@@ -4,7 +4,7 @@ import RightSection from './RightSection';
 import LeftSection from './LeftSection';
 import Cta from './Cta';
 import CloudComplianceSection from './CloudComplianceSection';
-import AlignEntities from './AlignEntities';
+import AlignEntities from './AlignTeams';
 
 const MarkdownPage = ({ data }) => {
     return (
@@ -47,13 +47,13 @@ const MarkdownPage = ({ data }) => {
                         return null;
                     });
                 }
-                if (item === 'alignEntities') {
+                if (item === 'alignTeamsSection') {
                     return <AlignEntities />;
                 }
                 if (item === 'cloudComplianceSection') {
                     return <CloudComplianceSection />;
                 }
-                if (item === 'cta') {
+                if (item === 'ctaSection') {
                     return <Cta markdown={data?.cta?.ctaMarkdown} />;
                 }
                 return null;

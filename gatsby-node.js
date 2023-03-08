@@ -122,7 +122,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 rowMarkdown
                                 rowBackground
                             }
-                            cta {
+                            ctaSection {
                                 ctaMarkdown
                             }
                         }
@@ -184,7 +184,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         textImageRow: [TextImageRow]
         markdownBody: String
         sections: [String]
-        cta: CTA
+        ctaSection: CTA
     }
     
     type CTA {

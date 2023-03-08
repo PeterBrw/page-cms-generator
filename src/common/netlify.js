@@ -8,7 +8,7 @@ import RightSection from '../components/markdownPages/RightSection';
 import LeftSection from '../components/markdownPages/LeftSection';
 import Cta from '../components/markdownPages/Cta';
 import CloudComplianceSection from '../components/markdownPages/CloudComplianceSection';
-import AlignEntities from '../components/markdownPages/AlignEntities';
+import AlignEntities from '../components/markdownPages/AlignTeams';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -62,10 +62,10 @@ const PagesPreview = ({ entry }) => {
                     if (item === 'cloudComplianceSection') {
                         return <CloudComplianceSection />;
                     }
-                    if (item === 'alignEntities') {
+                    if (item === 'alignTeamsSection') {
                         return <AlignEntities />;
                     }
-                    if (item === 'cta') {
+                    if (item === 'ctaSection') {
                         return <Cta markdown={entry.getIn(['data', 'cta'])?.toJS()?.ctaMarkdown} />;
                     }
                     return null;

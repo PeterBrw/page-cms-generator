@@ -8,7 +8,7 @@ const titleSection = css`
     line-height: 2.188rem;
 `;
 
-const AlignEntities = () => {
+const AlignTeams = () => {
     return (
         <div className='py-16'>
             <Container id='align-entities'>
@@ -80,4 +80,4 @@ const AlignEntities = () => {
     );
 };
 
-export default AlignEntities;
+export default AlignTeams;
