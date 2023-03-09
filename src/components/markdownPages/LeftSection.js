@@ -29,7 +29,7 @@ const LeftSection = ({ image, subtitle, customComponents, markdown, preview, bac
                                 </ReactMarkdown>
                             </div>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                                <div className={classNames({ 'blog-reset': !customComponents })}>
+                                <div className={classNames({ 'blog-reset': !!customComponents })}>
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                         {markdown}
                                     </ReactMarkdown>
