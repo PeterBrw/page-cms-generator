@@ -107,6 +107,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                         gatsbyImageData(width: 1920, layout: CONSTRAINED)
                                     }
                                 }
+                                customComponents
                                 heromarkdown
                             }
                             textImageRow {
@@ -119,6 +120,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 }
                                 rowAlt
                                 rowSubtitle
+                                customComponents
                                 rowMarkdown
                                 rowBackground
                             }
@@ -207,6 +209,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         rowImage: File @fileByRelativePath
         rowAlt: String
         rowSubtitle: String
+        customComponents: Boolean
         rowMarkdown: String
         rowBackground: String
     }
@@ -214,6 +217,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Hero {
         herobackground: String
         heroimage: File @fileByRelativePath
+        customComponents: Boolean
         heromarkdown: String
     }
     

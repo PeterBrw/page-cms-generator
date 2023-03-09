@@ -5,7 +5,7 @@ import LeftSection from './LeftSection';
 import Cta from './Cta';
 import CloudComplianceSection from './CloudComplianceSection';
 import AlignEntities from './AlignTeams';
-import Featrures from "./Featrures";
+import Features from './Featrures';
 
 const MarkdownPage = ({ data }) => {
     return (
@@ -17,6 +17,7 @@ const MarkdownPage = ({ data }) => {
                             heroBackground={data.hero.herobackground}
                             heroImage={data.hero.heroimage.childImageSharp.gatsbyImageData}
                             markdown={data.hero.heromarkdown}
+                            customComponents={data.hero.customComponents}
                             key={data.hero.heromarkdown}
                         />
                     );
@@ -29,6 +30,7 @@ const MarkdownPage = ({ data }) => {
                                     key={index}
                                     subtitle={section.rowSubtitle}
                                     image={section.rowImage.childImageSharp.gatsbyImageData}
+                                    customComponents={data.hero.customComponents}
                                     markdown={section.rowMarkdown}
                                     backgroundColor={section.rowBackground}
                                 />
@@ -40,6 +42,7 @@ const MarkdownPage = ({ data }) => {
                                     key={index}
                                     subtitle={section.rowSubtitle}
                                     image={section.rowImage.childImageSharp.gatsbyImageData}
+                                    customComponents={data.hero.customComponents}
                                     markdown={section.rowMarkdown}
                                     backgroundColor={section.rowBackground}
                                 />
@@ -51,8 +54,8 @@ const MarkdownPage = ({ data }) => {
                 if (item === 'alignTeamsSection') {
                     return <AlignEntities />;
                 }
-                if(item === 'featuresSection') {
-                    return <Featrures features={data?.featuresSection}/>
+                if (item === 'featuresSection') {
+                    return <Features features={data?.featuresSection} />;
                 }
                 if (item === 'cloudComplianceSection') {
                     return <CloudComplianceSection />;

@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row } from '../atoms/Containers';
 
 const Features = ({ features }) => {
-    console.log(features?.slice(0, 4));
     return (
         <Container>
             {' '}

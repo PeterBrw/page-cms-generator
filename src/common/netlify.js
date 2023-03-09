@@ -24,6 +24,7 @@ const PagesPreview = ({ entry }) => {
                                 heroBackground={entry.getIn(['data', 'hero'])?.toJS()?.herobackground}
                                 heroImage={entry.getIn(['data', 'hero'])?.toJS()?.heroimage}
                                 markdown={entry.getIn(['data', 'hero'])?.toJS()?.heromarkdown}
+                                customComponents={entry.getIn(['data', 'hero'])?.toJS()?.customComponents}
                                 preview={true}
                             />
                         );
@@ -39,6 +40,7 @@ const PagesPreview = ({ entry }) => {
                                             key={index}
                                             subtitle={section.rowSubtitle}
                                             image={section.rowImage}
+                                            customComponents={section.customComponents}
                                             markdown={section.rowMarkdown}
                                             backgroundColor={section.rowBackground}
                                             preview={true}
@@ -51,6 +53,7 @@ const PagesPreview = ({ entry }) => {
                                             key={index}
                                             subtitle={section.rowSubtitle}
                                             image={section.rowImage}
+                                            customComponents={section.customComponents}
                                             markdown={section.rowMarkdown}
                                             backgroundColor={section.rowBackground}
                                             preview={true}

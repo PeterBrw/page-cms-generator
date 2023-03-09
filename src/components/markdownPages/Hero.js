@@ -6,6 +6,7 @@ import { css } from 'twin.macro';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import classNames from 'classnames';
 
 const heroBg = (url) => css`
     background-image: linear-gradient(#eeeeee, #e4edfc);
@@ -17,7 +18,8 @@ const heroBg = (url) => css`
     }
 `;
 
-const Hero = ({ heroImage, heroBackground, markdown, preview }) => {
+const Hero = ({ heroImage, heroBackground, customComponents, markdown, preview }) => {
+    console.log(customComponents);
     return (
         <div className='pt-8' css={heroBg(heroBackground)}>
             <Container>
@@ -25,7 +27,7 @@ const Hero = ({ heroImage, heroBackground, markdown, preview }) => {
                     <Row>
                         <div className='col-span-12 lg:col-span-6 order-last lg:order-first'>
                             <div className='lg:mt-16 pt-4 max-w-xl mx-auto lg:mx-0'>
-                                <div className='blog-reset'>
+                                <div className={classNames({ 'blog-reset': !customComponents })}>
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                         {markdown}
                                     </ReactMarkdown>

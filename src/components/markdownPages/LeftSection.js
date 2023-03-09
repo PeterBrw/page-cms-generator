@@ -4,8 +4,9 @@ import rehypeRaw from 'rehype-raw';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { css } from 'twin.macro';
 import { Container } from '../atoms/Containers';
+import classNames from 'classnames';
 
-const LeftSection = ({ image, subtitle, markdown, preview, backgroundColor }) => {
+const LeftSection = ({ image, subtitle, customComponents, markdown, preview, backgroundColor }) => {
     return (
         <div
             css={css`
@@ -23,14 +24,12 @@ const LeftSection = ({ image, subtitle, markdown, preview, backgroundColor }) =>
                         </div>
                         <div className='col-span-12 lg:col-span-6'>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                                <div className='blog-reset'>
-                                    <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
-                                        {subtitle}
-                                    </ReactMarkdown>
-                                </div>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
+                                    {subtitle}
+                                </ReactMarkdown>
                             </div>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                                <div className='blog-reset'>
+                                <div className={classNames({ 'blog-reset': !customComponents })}>
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                         {markdown}
                                     </ReactMarkdown>
