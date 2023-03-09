@@ -121,7 +121,7 @@ collections:
         label: 'Sections',
         name: 'sections',
         widget: 'select',
-        options: [ 'hero', 'textImageRow', 'alignTeamsSection', 'cloudComplianceSection', 'ctaSection' ],
+        options: [ 'hero', 'textImageRow', 'alignTeamsSection', 'featuresSection', 'cloudComplianceSection', 'ctaSection' ],
         default: [ 'hero' ],
         multiple: true
       }
@@ -155,6 +155,13 @@ collections:
             options: [ '#FFFFFF', '#F3F8FF' ],
             multiple: false
           }
+      - label: 'Features'
+        name: 'featuresSection'
+        widget: 'list'
+        allow_add: true
+        fields:
+          - { label: 'Feature Title', name: 'featureTitle', widget: 'string', required: false }
+          - { label: 'Feature Text', name: 'featureText', widget: 'string', required: false }
       - label: 'CTA'
         name: 'ctaSection'
         widget: 'object'

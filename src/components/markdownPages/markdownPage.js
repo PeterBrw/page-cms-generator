@@ -5,6 +5,7 @@ import LeftSection from './LeftSection';
 import Cta from './Cta';
 import CloudComplianceSection from './CloudComplianceSection';
 import AlignEntities from './AlignTeams';
+import Featrures from "./Featrures";
 
 const MarkdownPage = ({ data }) => {
     return (
@@ -49,6 +50,9 @@ const MarkdownPage = ({ data }) => {
                 }
                 if (item === 'alignTeamsSection') {
                     return <AlignEntities />;
+                }
+                if(item === 'featuresSection') {
+                    return <Featrures features={data?.featuresSection}/>
                 }
                 if (item === 'cloudComplianceSection') {
                     return <CloudComplianceSection />;

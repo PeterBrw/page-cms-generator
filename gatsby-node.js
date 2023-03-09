@@ -122,6 +122,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                                 rowMarkdown
                                 rowBackground
                             }
+                            featuresSection {
+                                featureTitle
+                                featureText
+                            }
                             ctaSection {
                                 ctaMarkdown
                             }
@@ -184,7 +188,14 @@ exports.createSchemaCustomization = ({ actions }) => {
         textImageRow: [TextImageRow]
         markdownBody: String
         sections: [String]
+        featuresSection: [FeaturesSection]
         ctaSection: CTA
+    }
+    
+    type FeaturesSection {
+        icon: Boolean
+        featureTitle: String
+        featureText: String
     }
     
     type CTA {

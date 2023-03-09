@@ -9,6 +9,7 @@ import LeftSection from '../components/markdownPages/LeftSection';
 import Cta from '../components/markdownPages/Cta';
 import CloudComplianceSection from '../components/markdownPages/CloudComplianceSection';
 import AlignEntities from '../components/markdownPages/AlignTeams';
+import Featrures from '../components/markdownPages/Featrures';
 
 const PagesPreview = ({ entry }) => {
     return (
@@ -64,6 +65,9 @@ const PagesPreview = ({ entry }) => {
                     }
                     if (item === 'alignTeamsSection') {
                         return <AlignEntities />;
+                    }
+                    if (item === 'featuresSection') {
+                        return <Featrures features={entry.getIn(['data', 'featuresSection'])?.toJS()} />;
                     }
                     if (item === 'ctaSection') {
                         return <Cta markdown={entry.getIn(['data', 'ctaSection'])?.toJS()?.ctaMarkdown} />;
