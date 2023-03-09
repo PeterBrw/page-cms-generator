@@ -30,7 +30,7 @@ const MarkdownPage = ({ data }) => {
                                     key={index}
                                     subtitle={section.rowSubtitle}
                                     image={section.rowImage.childImageSharp.gatsbyImageData}
-                                    customComponents={data.hero.customComponents}
+                                    customComponents={section.customComponents}
                                     markdown={section.rowMarkdown}
                                     backgroundColor={section.rowBackground}
                                 />
@@ -42,7 +42,7 @@ const MarkdownPage = ({ data }) => {
                                     key={index}
                                     subtitle={section.rowSubtitle}
                                     image={section.rowImage.childImageSharp.gatsbyImageData}
-                                    customComponents={data.hero.customComponents}
+                                    customComponents={section.customComponents}
                                     markdown={section.rowMarkdown}
                                     backgroundColor={section.rowBackground}
                                 />
