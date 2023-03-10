@@ -10,7 +10,7 @@ const RightSection = ({ subtitle, image, customComponents, markdown, preview, ba
     return (
         <div
             css={css`
-                background-color: ${backgroundColor ? backgroundColor : ''};
+                background-color: ${backgroundColor};
             `}
         >
             <Container>
@@ -23,7 +23,7 @@ const RightSection = ({ subtitle, image, customComponents, markdown, preview, ba
                                 </ReactMarkdown>
                             </div>
                             <div className='mx-auto lg:mx-0 max-w-xl lg:max-w-lg'>
-                                <div className={classNames({ 'blog-reset': !!customComponents })}>
+                                <div className={classNames({ 'blog-reset': !customComponents })}>
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                         {markdown}
                                     </ReactMarkdown>
