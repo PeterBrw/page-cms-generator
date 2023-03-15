@@ -1,6 +1,6 @@
 import CMS from 'netlify-cms-app';
 import React from 'react';
-import '../styles/global.css';
+import '../styles/netlify-preview.css';
 import JsonPage from '../components/jsonPages/jsonPage';
 import Hero from '../components/markdownPages/Hero';
 import CSSInjector from './CSSInjector';
