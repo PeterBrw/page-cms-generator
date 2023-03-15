@@ -129,7 +129,7 @@ collections:
         name: "hero"
         widget: "object"
         fields:
-          - { label: 'Hero Background', name: 'herobackground', widget: image }
+          - { label: 'Hero Background', name: 'herobackground', widget: image, required: false }
           - { label: 'Hero Image', name: 'heroimage', widget: image }
           - { label: "Custom Components", name: "customComponents", widget: "boolean", default: false}
           - { label: 'Hero Markdown', name: 'heromarkdown', widget: 'markdown', hint: 'For title use H1 Hero'}
