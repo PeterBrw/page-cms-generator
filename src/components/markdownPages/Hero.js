@@ -26,7 +26,7 @@ const Hero = ({ heroImage, heroBackground, customComponents, markdown, preview }
                     <Row>
                         <div className='col-span-12 lg:col-span-6 order-last lg:order-first'>
                             <div className='lg:mt-16 pt-4 max-w-xl mx-auto lg:mx-0'>
-                                <div className={classNames({ 'blog-reset': !customComponents })}>
+                                <div className={classNames({ 'pages-reset': !customComponents })}>
                                     <ReactMarkdown rehypePlugins={[rehypeRaw]} linkTarget='_blank'>
                                         {markdown}
                                     </ReactMarkdown>
